@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D9162491B3C6B0000F5B8EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9162481B3C6B0000F5B8EC /* main.m */; };
+		5D91624C1B3C6B0000F5B8EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D91624B1B3C6B0000F5B8EC /* AppDelegate.m */; };
+		5D9162541B3C6B0000F5B8EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D9162531B3C6B0000F5B8EC /* Images.xcassets */; };
+		5D9162571B3C6B0000F5B8EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D9162551B3C6B0000F5B8EC /* LaunchScreen.xib */; };
+		5D9162631B3C6B0000F5B8EC /* TLKeyboardContainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9162621B3C6B0000F5B8EC /* TLKeyboardContainerTests.m */; };
+		5D9162721B3C701F00F5B8EC /* MainThugLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9162701B3C701F00F5B8EC /* MainThugLifeViewController.m */; };
+		5D9162731B3C701F00F5B8EC /* MainThugLifeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D9162711B3C701F00F5B8EC /* MainThugLifeViewController.xib */; };
+		5DCC58651B3C82F2006281B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC58641B3C82F2006281B7 /* AVFoundation.framework */; };
+		5DCC58691B3C835A006281B7 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC58681B3C835A006281B7 /* Spotify.framework */; };
+		5DCC586D1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC586B1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m */; };
+		5DCC586E1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */; };
+		5DCC58751B4066A7006281B7 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC586F1B4066A7006281B7 /* step1.png */; };
+		5DCC58761B4066A7006281B7 /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58701B4066A7006281B7 /* step2.png */; };
+		5DCC58771B4066A7006281B7 /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58711B4066A7006281B7 /* step3.png */; };
+		5DCC58781B4066A7006281B7 /* step4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58721B4066A7006281B7 /* step4.png */; };
+		5DCC58791B4066A7006281B7 /* step5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58731B4066A7006281B7 /* step5.png */; };
+		5DCC587A1B4066A7006281B7 /* step6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58741B4066A7006281B7 /* step6.png */; };
+		5DCC587D1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC587C1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m */; };
+		5DCC58891B40C72F006281B7 /* ThugLifeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC58881B40C72F006281B7 /* ThugLifeLyrics.m */; };
+		5DCC588C1B42E7EA006281B7 /* LyricsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC588B1B42E7EA006281B7 /* LyricsManager.m */; };
+		5DCC588E1B42E904006281B7 /* tupac_lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */; };
+		5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC58981B42EB95006281B7 /* KeyboardViewController.m */; };
+		5DCC589C1B42EB95006281B7 /* ThugLifeKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */; };
+		5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A51B42F0F6006281B7 /* globe-button.png */; };
+		5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */; };
+		5DCC58AC1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC58AA1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m */; };
+		5DCC58AD1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D91625D1B3C6B0000F5B8EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D91623B1B3C6B0000F5B8EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D9162421B3C6B0000F5B8EC;
+			remoteInfo = TLKeyboardContainer;
+		};
+		5DCC589A1B42EB95006281B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D91623B1B3C6B0000F5B8EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DCC58921B42EB95006281B7;
+			remoteInfo = ThugLifeKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5DCC58A01B42EB95006281B7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5DCC589C1B42EB95006281B7 /* ThugLifeKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5D9162431B3C6B0000F5B8EC /* TLKeyboardContainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLKeyboardContainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9162471B3C6B0000F5B8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9162481B3C6B0000F5B8EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D91624A1B3C6B0000F5B8EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5D91624B1B3C6B0000F5B8EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5D9162531B3C6B0000F5B8EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5D9162561B3C6B0000F5B8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5D91625C1B3C6B0000F5B8EC /* TLKeyboardContainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLKeyboardContainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9162611B3C6B0000F5B8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9162621B3C6B0000F5B8EC /* TLKeyboardContainerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLKeyboardContainerTests.m; sourceTree = "<group>"; };
+		5D91626F1B3C701F00F5B8EC /* MainThugLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainThugLifeViewController.h; sourceTree = "<group>"; };
+		5D9162701B3C701F00F5B8EC /* MainThugLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainThugLifeViewController.m; sourceTree = "<group>"; };
+		5D9162711B3C701F00F5B8EC /* MainThugLifeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainThugLifeViewController.xib; sourceTree = "<group>"; };
+		5DCC58641B3C82F2006281B7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5DCC58681B3C835A006281B7 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = "../Spotify SDK/Spotify.framework"; sourceTree = "<group>"; };
+		5DCC586A1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeTutorialPageViewController.h; sourceTree = "<group>"; };
+		5DCC586B1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeTutorialPageViewController.m; sourceTree = "<group>"; };
+		5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeTutorialPageViewController.xib; sourceTree = "<group>"; };
+		5DCC586F1B4066A7006281B7 /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step1.png; path = ../../../Desktop/step1.png; sourceTree = "<group>"; };
+		5DCC58701B4066A7006281B7 /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step2.png; path = ../../../Desktop/step2.png; sourceTree = "<group>"; };
+		5DCC58711B4066A7006281B7 /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step3.png; path = ../../../Desktop/step3.png; sourceTree = "<group>"; };
+		5DCC58721B4066A7006281B7 /* step4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step4.png; path = ../../../Desktop/step4.png; sourceTree = "<group>"; };
+		5DCC58731B4066A7006281B7 /* step5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step5.png; path = ../../../Desktop/step5.png; sourceTree = "<group>"; };
+		5DCC58741B4066A7006281B7 /* step6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step6.png; path = ../../../Desktop/step6.png; sourceTree = "<group>"; };
+		5DCC587B1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeSavedTracksTableViewController.h; sourceTree = "<group>"; };
+		5DCC587C1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeSavedTracksTableViewController.m; sourceTree = "<group>"; };
+		5DCC58871B40C72F006281B7 /* ThugLifeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThugLifeLyrics.h; path = ../../ThugLife/ThugLifeKeyboard/ThugLifeLyrics.h; sourceTree = "<group>"; };
+		5DCC58881B40C72F006281B7 /* ThugLifeLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThugLifeLyrics.m; path = ../../ThugLife/ThugLifeKeyboard/ThugLifeLyrics.m; sourceTree = "<group>"; };
+		5DCC588A1B42E7EA006281B7 /* LyricsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LyricsManager.h; path = ../../ThugLife/ThugLifeKeyboard/LyricsManager.h; sourceTree = "<group>"; };
+		5DCC588B1B42E7EA006281B7 /* LyricsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LyricsManager.m; path = ../../ThugLife/ThugLifeKeyboard/LyricsManager.m; sourceTree = "<group>"; };
+		5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tupac_lyrics.txt; path = ../../../Desktop/tupac_lyrics.txt; sourceTree = "<group>"; };
+		5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThugLifeKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DCC58961B42EB95006281B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DCC58971B42EB95006281B7 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		5DCC58981B42EB95006281B7 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeKeyboardView.xib; sourceTree = "<group>"; };
+		5DCC58A51B42F0F6006281B7 /* globe-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button.png"; sourceTree = "<group>"; };
+		5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button@2x.png"; sourceTree = "<group>"; };
+		5DCC58A91B435F5E006281B7 /* ThugLifeLyricTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeLyricTableViewCell.h; sourceTree = "<group>"; };
+		5DCC58AA1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeLyricTableViewCell.m; sourceTree = "<group>"; };
+		5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeLyricTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D9162401B3C6B0000F5B8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DCC58691B3C835A006281B7 /* Spotify.framework in Frameworks */,
+				5DCC58651B3C82F2006281B7 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9162591B3C6B0000F5B8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DCC58901B42EB95006281B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D91623A1B3C6B0000F5B8EC = {
+			isa = PBXGroup;
+			children = (
+				5DCC58681B3C835A006281B7 /* Spotify.framework */,
+				5DCC58641B3C82F2006281B7 /* AVFoundation.framework */,
+				5D9162451B3C6B0000F5B8EC /* TLKeyboardContainer */,
+				5D91625F1B3C6B0000F5B8EC /* TLKeyboardContainerTests */,
+				5DCC58941B42EB95006281B7 /* ThugLifeKeyboard */,
+				5D9162441B3C6B0000F5B8EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D9162441B3C6B0000F5B8EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D9162431B3C6B0000F5B8EC /* TLKeyboardContainer.app */,
+				5D91625C1B3C6B0000F5B8EC /* TLKeyboardContainerTests.xctest */,
+				5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D9162451B3C6B0000F5B8EC /* TLKeyboardContainer */ = {
+			isa = PBXGroup;
+			children = (
+				5D91624A1B3C6B0000F5B8EC /* AppDelegate.h */,
+				5D91624B1B3C6B0000F5B8EC /* AppDelegate.m */,
+				5D9162531B3C6B0000F5B8EC /* Images.xcassets */,
+				5D9162551B3C6B0000F5B8EC /* LaunchScreen.xib */,
+				5D91626F1B3C701F00F5B8EC /* MainThugLifeViewController.h */,
+				5D9162701B3C701F00F5B8EC /* MainThugLifeViewController.m */,
+				5D9162711B3C701F00F5B8EC /* MainThugLifeViewController.xib */,
+				5D9162461B3C6B0000F5B8EC /* Supporting Files */,
+				5DCC587B1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.h */,
+				5DCC587C1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m */,
+				5DCC586A1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.h */,
+				5DCC586B1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m */,
+				5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */,
+			);
+			path = TLKeyboardContainer;
+			sourceTree = "<group>";
+		};
+		5D9162461B3C6B0000F5B8EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */,
+				5DCC586F1B4066A7006281B7 /* step1.png */,
+				5DCC58701B4066A7006281B7 /* step2.png */,
+				5DCC58711B4066A7006281B7 /* step3.png */,
+				5DCC58721B4066A7006281B7 /* step4.png */,
+				5DCC58731B4066A7006281B7 /* step5.png */,
+				5DCC58741B4066A7006281B7 /* step6.png */,
+				5D9162471B3C6B0000F5B8EC /* Info.plist */,
+				5D9162481B3C6B0000F5B8EC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D91625F1B3C6B0000F5B8EC /* TLKeyboardContainerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D9162621B3C6B0000F5B8EC /* TLKeyboardContainerTests.m */,
+				5D9162601B3C6B0000F5B8EC /* Supporting Files */,
+			);
+			path = TLKeyboardContainerTests;
+			sourceTree = "<group>";
+		};
+		5D9162601B3C6B0000F5B8EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D9162611B3C6B0000F5B8EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DCC58941B42EB95006281B7 /* ThugLifeKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC58871B40C72F006281B7 /* ThugLifeLyrics.h */,
+				5DCC58881B40C72F006281B7 /* ThugLifeLyrics.m */,
+				5DCC588A1B42E7EA006281B7 /* LyricsManager.h */,
+				5DCC588B1B42E7EA006281B7 /* LyricsManager.m */,
+				5DCC58A51B42F0F6006281B7 /* globe-button.png */,
+				5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */,
+				5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */,
+				5DCC58971B42EB95006281B7 /* KeyboardViewController.h */,
+				5DCC58981B42EB95006281B7 /* KeyboardViewController.m */,
+				5DCC58951B42EB95006281B7 /* Supporting Files */,
+				5DCC58A91B435F5E006281B7 /* ThugLifeLyricTableViewCell.h */,
+				5DCC58AA1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m */,
+				5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */,
+			);
+			path = ThugLifeKeyboard;
+			sourceTree = "<group>";
+		};
+		5DCC58951B42EB95006281B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC58961B42EB95006281B7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D9162421B3C6B0000F5B8EC /* TLKeyboardContainer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D9162661B3C6B0000F5B8EC /* Build configuration list for PBXNativeTarget "TLKeyboardContainer" */;
+			buildPhases = (
+				5D91623F1B3C6B0000F5B8EC /* Sources */,
+				5D9162401B3C6B0000F5B8EC /* Frameworks */,
+				5D9162411B3C6B0000F5B8EC /* Resources */,
+				5DCC58A01B42EB95006281B7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DCC589B1B42EB95006281B7 /* PBXTargetDependency */,
+			);
+			name = TLKeyboardContainer;
+			productName = TLKeyboardContainer;
+			productReference = 5D9162431B3C6B0000F5B8EC /* TLKeyboardContainer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D91625B1B3C6B0000F5B8EC /* TLKeyboardContainerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D9162691B3C6B0000F5B8EC /* Build configuration list for PBXNativeTarget "TLKeyboardContainerTests" */;
+			buildPhases = (
+				5D9162581B3C6B0000F5B8EC /* Sources */,
+				5D9162591B3C6B0000F5B8EC /* Frameworks */,
+				5D91625A1B3C6B0000F5B8EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D91625E1B3C6B0000F5B8EC /* PBXTargetDependency */,
+			);
+			name = TLKeyboardContainerTests;
+			productName = TLKeyboardContainerTests;
+			productReference = 5D91625C1B3C6B0000F5B8EC /* TLKeyboardContainerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5DCC58921B42EB95006281B7 /* ThugLifeKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DCC589D1B42EB95006281B7 /* Build configuration list for PBXNativeTarget "ThugLifeKeyboard" */;
+			buildPhases = (
+				5DCC588F1B42EB95006281B7 /* Sources */,
+				5DCC58901B42EB95006281B7 /* Frameworks */,
+				5DCC58911B42EB95006281B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThugLifeKeyboard;
+			productName = ThugLifeKeyboard;
+			productReference = 5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D91623B1B3C6B0000F5B8EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = FredHedz;
+				TargetAttributes = {
+					5D9162421B3C6B0000F5B8EC = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					5D91625B1B3C6B0000F5B8EC = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5D9162421B3C6B0000F5B8EC;
+					};
+					5DCC58921B42EB95006281B7 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5D91623E1B3C6B0000F5B8EC /* Build configuration list for PBXProject "TLKeyboardContainer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D91623A1B3C6B0000F5B8EC;
+			productRefGroup = 5D9162441B3C6B0000F5B8EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D9162421B3C6B0000F5B8EC /* TLKeyboardContainer */,
+				5D91625B1B3C6B0000F5B8EC /* TLKeyboardContainerTests */,
+				5DCC58921B42EB95006281B7 /* ThugLifeKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D9162411B3C6B0000F5B8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9162731B3C701F00F5B8EC /* MainThugLifeViewController.xib in Resources */,
+				5DCC58791B4066A7006281B7 /* step5.png in Resources */,
+				5DCC588E1B42E904006281B7 /* tupac_lyrics.txt in Resources */,
+				5DCC58751B4066A7006281B7 /* step1.png in Resources */,
+				5DCC58771B4066A7006281B7 /* step3.png in Resources */,
+				5D9162571B3C6B0000F5B8EC /* LaunchScreen.xib in Resources */,
+				5DCC58781B4066A7006281B7 /* step4.png in Resources */,
+				5DCC587A1B4066A7006281B7 /* step6.png in Resources */,
+				5D9162541B3C6B0000F5B8EC /* Images.xcassets in Resources */,
+				5DCC58761B4066A7006281B7 /* step2.png in Resources */,
+				5DCC586E1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D91625A1B3C6B0000F5B8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DCC58911B42EB95006281B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */,
+				5DCC58AD1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib in Resources */,
+				5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */,
+				5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D91623F1B3C6B0000F5B8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D91624C1B3C6B0000F5B8EC /* AppDelegate.m in Sources */,
+				5DCC588C1B42E7EA006281B7 /* LyricsManager.m in Sources */,
+				5DCC58891B40C72F006281B7 /* ThugLifeLyrics.m in Sources */,
+				5DCC587D1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m in Sources */,
+				5D9162491B3C6B0000F5B8EC /* main.m in Sources */,
+				5D9162721B3C701F00F5B8EC /* MainThugLifeViewController.m in Sources */,
+				5DCC586D1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9162581B3C6B0000F5B8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9162631B3C6B0000F5B8EC /* TLKeyboardContainerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DCC588F1B42EB95006281B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */,
+				5DCC58AC1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D91625E1B3C6B0000F5B8EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D9162421B3C6B0000F5B8EC /* TLKeyboardContainer */;
+			targetProxy = 5D91625D1B3C6B0000F5B8EC /* PBXContainerItemProxy */;
+		};
+		5DCC589B1B42EB95006281B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DCC58921B42EB95006281B7 /* ThugLifeKeyboard */;
+			targetProxy = 5DCC589A1B42EB95006281B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D9162551B3C6B0000F5B8EC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D9162561B3C6B0000F5B8EC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D9162641B3C6B0000F5B8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5D9162651B3C6B0000F5B8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D9162671B3C6B0000F5B8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/HomeComputer/iOSProjects/ios-sdk-master",
+					/Users/HomeComputer/iOSProjects/Spotify,
+					SDK,
+				);
+				INFOPLIST_FILE = TLKeyboardContainer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5D9162681B3C6B0000F5B8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/HomeComputer/iOSProjects/ios-sdk-master",
+					/Users/HomeComputer/iOSProjects/Spotify,
+					SDK,
+				);
+				INFOPLIST_FILE = TLKeyboardContainer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5D91626A1B3C6B0000F5B8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TLKeyboardContainerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLKeyboardContainer.app/TLKeyboardContainer";
+			};
+			name = Debug;
+		};
+		5D91626B1B3C6B0000F5B8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TLKeyboardContainerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLKeyboardContainer.app/TLKeyboardContainer";
+			};
+			name = Release;
+		};
+		5DCC589E1B42EB95006281B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ThugLifeKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5DCC589F1B42EB95006281B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ThugLifeKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D91623E1B3C6B0000F5B8EC /* Build configuration list for PBXProject "TLKeyboardContainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D9162641B3C6B0000F5B8EC /* Debug */,
+				5D9162651B3C6B0000F5B8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D9162661B3C6B0000F5B8EC /* Build configuration list for PBXNativeTarget "TLKeyboardContainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D9162671B3C6B0000F5B8EC /* Debug */,
+				5D9162681B3C6B0000F5B8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D9162691B3C6B0000F5B8EC /* Build configuration list for PBXNativeTarget "TLKeyboardContainerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D91626A1B3C6B0000F5B8EC /* Debug */,
+				5D91626B1B3C6B0000F5B8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DCC589D1B42EB95006281B7 /* Build configuration list for PBXNativeTarget "ThugLifeKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DCC589E1B42EB95006281B7 /* Debug */,
+				5DCC589F1B42EB95006281B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D91623B1B3C6B0000F5B8EC /* Project object */;
+}
