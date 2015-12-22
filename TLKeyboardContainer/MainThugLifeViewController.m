@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 FredHedz. All rights reserved.
 //
 
-#import <Spotify/Spotify.h>
 #import <MessageUI/MessageUI.h>
 #import "MainThugLifeViewController.h"
 #import "ThugLifeTutorialPageViewController.h"
@@ -15,7 +14,7 @@ static NSString * const kClientId = @"8525e4ddf7ca4415919b7bb2eecbf820";
 static NSString * const kCallbackURL = @"thuglife://callback";
 static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
 
-@interface MainThugLifeViewController () <SPTAuthViewDelegate, MFMailComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface MainThugLifeViewController () < MFMailComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) NSArray *tutorialTitlesArray;
@@ -34,54 +33,10 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
     self.tutorialTitlesArray = titlesArray;
     self.imageTitlesArray = imageTitles;
     
-    if (![[SPTAuth defaultInstance] spotifyApplicationIsInstalled]) {
-        NSString *installSpotifyString = @"Install Spotify for more features!";
-        [self.loginButton setTitle:installSpotifyString forState:UIControlStateNormal];
-    }
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
-}
-
-- (IBAction)loginButtonTapped:(id)sender {
-    
-    //login with spotify if there is no valid session
-    SPTAuth *spotifyAuth = [SPTAuth defaultInstance];
-    SPTSession *spotifySession = spotifyAuth.session;
-    
-    if (!spotifySession.isValid) {
-        
-        NSArray *spotifyUserPermissionScopes = @[SPTAuthPlaylistModifyPrivateScope, SPTAuthUserReadPrivateScope, SPTAuthUserLibraryModifyScope];
-        NSURL *callBackURL = [NSURL URLWithString:kCallbackURL];
-        [[SPTAuth defaultInstance] setRedirectURL:callBackURL];
-        [[SPTAuth defaultInstance] setRequestedScopes:spotifyUserPermissionScopes];
-        [[SPTAuth defaultInstance] setClientID:kClientId];
-        
-        SPTAuthViewController *authController = [SPTAuthViewController authenticationViewController];
-        authController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        authController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        authController.delegate = self;
-        self.modalPresentationStyle = UIModalPresentationCurrentContext;
-        self.definesPresentationContext = YES;
-        
-        [self presentViewController:authController animated:YES completion:NULL];
-        
-    } else {
-        
-        SPTAudioStreamingController *streamingController = [[SPTAudioStreamingController alloc] initWithClientId:spotifyAuth.clientID];
-        [streamingController logout:^(NSError *error) {
-            if (error) {
-                
-                NSLog(@"Error logging out: %@", error.description);
-            }
-            
-            NSString *loggedOutString = @"Login with Spotify";
-            [self.loginButton setTitle:loggedOutString forState:UIControlStateNormal];
-        }];
-
-    }
 }
 
 - (IBAction)userManualButtonTapped:(id)sender {
@@ -132,37 +87,6 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
         email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
     }
-}
-
-- (void)authenticationViewController:(SPTAuthViewController *)authenticationViewController didLoginWithSession:(SPTSession *)session {
-    
-    //Update button to show user name and log out option
-    if (session) {
-        [SPTRequest userInformationForUserInSession:session callback:^(NSError *error, SPTUser *user) {
-            
-            if (error) {
-                NSLog(@"Error: %@.", error.description);
-            }
-            NSString *userName = user.displayName;
-            NSString *loggedInString = [NSString stringWithFormat:@"Log Out: %@", userName];
-            [self.loginButton setTitle:loggedInString forState:UIControlStateNormal];
-
-        }];
-    }
-    
-    //push ThugLifeSavedTracksTableViewController to navigation controller
-    
-    
-}
-
-- (void)authenticationViewController:(SPTAuthViewController *)authenticationViewController didFailToLogin:(NSError *)error
-{
-    NSLog(@"Failed to login: %@", error.description);
-}
-
-- (void)authenticationViewControllerDidCancelLogin:(SPTAuthViewController *)authenticationViewController
-{
-    NSLog(@"Login cancelled");
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller
@@ -240,10 +164,10 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
 - (void)pageViewController:(UIPageViewController *)pageViewController
 willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     
-    ThugLifeTutorialPageViewController *tltPageViewController = (ThugLifeTutorialPageViewController *)pendingViewControllers[0];
-    NSInteger index = tltPageViewController.p;
-    
-    UINavigationItem *navItem = self.pageViewController.navigationItem;
+	ThugLifeTutorialPageViewController *tltPageViewController = (ThugLifeTutorialPageViewController *)pendingViewControllers[0];
+	NSInteger index = tltPageViewController.index;
+	
+	UINavigationItem *navItem = self.pageViewController.navigationItem;
     navItem.title = self.tutorialTitlesArray[index];
 }
 
