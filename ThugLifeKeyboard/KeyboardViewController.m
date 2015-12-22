@@ -52,12 +52,12 @@
     [self.lyricsTableView setRestorationIdentifier:@"ThugLifeLyricsTable"];
     [self.lyricsTableView setDelegate:self];
     [self.lyricsTableView setDataSource:self];
-    [self.lyricsTableView setEstimatedRowHeight:44];
+    [self.lyricsTableView setEstimatedRowHeight:50];
     [self.lyricsTableView setRowHeight:UITableViewAutomaticDimension];
 	
-	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:self.view andData:[LyricsManager sharedManager].allCategories];
-	bottomBarCategoryPicker.delegate = self;
-    self.categoryPicker = bottomBarCategoryPicker;
+	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:[[LyricsManager sharedManager] allCategories]];
+	[bottomBarCategoryPicker setDelegate:self];
+    _categoryPicker = bottomBarCategoryPicker;
     
 }
 
@@ -88,10 +88,12 @@
 	
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+		[[cell textLabel] setNumberOfLines:0];
 	}
+	
     NSArray *lyricsArray = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
-	ThugLifeLyrics *song = [lyricsArray objectAtIndex:indexPath.row];
-	cell.textLabel.text = song.lyric;
+	ThugLifeLyrics *song = [lyricsArray objectAtIndex:[indexPath row]];
+	[[cell textLabel] setText:[song lyric]];
 	return cell;
 }
 
@@ -101,7 +103,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	[self.textDocumentProxy insertText:cell.textLabel.text];
+	[self.textDocumentProxy insertText:[[cell textLabel] text]];
 }
 
 - (void)textWillChange:(id<UITextInput>)textInput {
@@ -124,14 +126,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)categoryPickerDidSelectItemAtIndex:(int)index {
 	NSArray *allCategories = [[LyricsManager sharedManager] allCategories];
-	_currentCategory = allCategories[index];
+	_currentCategory = [allCategories objectAtIndex:index];
 	[_lyricsTableView reloadData];
 	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
 	_isCategoryPickerVisible = false;
-	[self.lyricsTableView reloadData];
+	[_lyricsTableView reloadData];
+	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
 }
 
 - (void)categoryPickerWillOpen {
