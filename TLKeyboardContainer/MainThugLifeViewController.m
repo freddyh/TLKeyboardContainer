@@ -16,7 +16,6 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
 
 @interface MainThugLifeViewController () < MFMailComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) NSArray *tutorialTitlesArray;
 @property (strong, nonatomic) NSArray *imageTitlesArray;
 @property (strong, nonatomic) UIPageViewController *pageViewController;

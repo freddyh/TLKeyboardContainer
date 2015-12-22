@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		468587D11C29EBE200741F78 /* Better Dayz.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587C91C29EBE200741F78 /* Better Dayz.png */; };
+		468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */; };
+		468587D31C29EBE200741F78 /* The Art of War.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CB1C29EBE200741F78 /* The Art of War.png */; };
+		468587D41C29EBE200741F78 /* Thug Life Volume One.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CC1C29EBE200741F78 /* Thug Life Volume One.png */; };
+		468587D51C29EBE200741F78 /* Tupac Resurrection.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CD1C29EBE200741F78 /* Tupac Resurrection.png */; };
+		468587D61C29EBE200741F78 /* tupac_lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 468587CE1C29EBE200741F78 /* tupac_lyrics.txt */; };
+		468587D71C29EBE200741F78 /* tupac_lyrics.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */; };
+		468587D81C29EBE200741F78 /* Until the End of Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587D01C29EBE200741F78 /* Until the End of Time.png */; };
+		468587E21C29EF1800741F78 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DB1C29EF1800741F78 /* step1.png */; };
+		468587E31C29EF1800741F78 /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DC1C29EF1800741F78 /* step3.png */; };
+		468587E51C29EF1800741F78 /* step4.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DE1C29EF1800741F78 /* step4.png */; };
+		468587E61C29EF1800741F78 /* step5.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DF1C29EF1800741F78 /* step5.png */; };
+		468587E71C29EF1800741F78 /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587E01C29EF1800741F78 /* step2.png */; };
+		468587E81C29EF1800741F78 /* step6.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587E11C29EF1800741F78 /* step6.png */; };
+		468587EB1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */; };
+		468587EE1C29F27A00741F78 /* CategoryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 468587ED1C29F27A00741F78 /* CategoryPicker.m */; };
 		46E04C881C28EC1300E5E64B /* ThugLifeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */; };
 		46E04C8B1C28EC1D00E5E64B /* LyricsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */; };
 		5D9162491B3C6B0000F5B8EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9162481B3C6B0000F5B8EC /* main.m */; };
@@ -19,14 +35,7 @@
 		5DCC58651B3C82F2006281B7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC58641B3C82F2006281B7 /* AVFoundation.framework */; };
 		5DCC586D1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC586B1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m */; };
 		5DCC586E1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */; };
-		5DCC58751B4066A7006281B7 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC586F1B4066A7006281B7 /* step1.png */; };
-		5DCC58761B4066A7006281B7 /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58701B4066A7006281B7 /* step2.png */; };
-		5DCC58771B4066A7006281B7 /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58711B4066A7006281B7 /* step3.png */; };
-		5DCC58781B4066A7006281B7 /* step4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58721B4066A7006281B7 /* step4.png */; };
-		5DCC58791B4066A7006281B7 /* step5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58731B4066A7006281B7 /* step5.png */; };
-		5DCC587A1B4066A7006281B7 /* step6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58741B4066A7006281B7 /* step6.png */; };
 		5DCC587D1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC587C1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m */; };
-		5DCC588E1B42E904006281B7 /* tupac_lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */; };
 		5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC58981B42EB95006281B7 /* KeyboardViewController.m */; };
 		5DCC589C1B42EB95006281B7 /* ThugLifeKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */; };
@@ -68,6 +77,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		468587C91C29EBE200741F78 /* Better Dayz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Better Dayz.png"; sourceTree = "<group>"; };
+		468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R U Still Down_ (Remember Me).png"; sourceTree = "<group>"; };
+		468587CB1C29EBE200741F78 /* The Art of War.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Art of War.png"; sourceTree = "<group>"; };
+		468587CC1C29EBE200741F78 /* Thug Life Volume One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thug Life Volume One.png"; sourceTree = "<group>"; };
+		468587CD1C29EBE200741F78 /* Tupac Resurrection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tupac Resurrection.png"; sourceTree = "<group>"; };
+		468587CE1C29EBE200741F78 /* tupac_lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tupac_lyrics.txt; sourceTree = "<group>"; };
+		468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = tupac_lyrics.xlsx; sourceTree = "<group>"; };
+		468587D01C29EBE200741F78 /* Until the End of Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Until the End of Time.png"; sourceTree = "<group>"; };
+		468587DB1C29EF1800741F78 /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
+		468587DC1C29EF1800741F78 /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
+		468587DE1C29EF1800741F78 /* step4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step4.png; sourceTree = "<group>"; };
+		468587DF1C29EF1800741F78 /* step5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step5.png; sourceTree = "<group>"; };
+		468587E01C29EF1800741F78 /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step2.png; sourceTree = "<group>"; };
+		468587E11C29EF1800741F78 /* step6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step6.png; sourceTree = "<group>"; };
+		468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeCategoryTableViewController.h; sourceTree = "<group>"; };
+		468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeCategoryTableViewController.m; sourceTree = "<group>"; };
+		468587EC1C29F27A00741F78 /* CategoryPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPicker.h; sourceTree = "<group>"; };
+		468587ED1C29F27A00741F78 /* CategoryPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPicker.m; sourceTree = "<group>"; };
 		46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeLyrics.h; sourceTree = "<group>"; };
 		46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeLyrics.m; sourceTree = "<group>"; };
 		46E04C891C28EC1D00E5E64B /* LyricsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricsManager.h; sourceTree = "<group>"; };
@@ -89,15 +116,8 @@
 		5DCC586A1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeTutorialPageViewController.h; sourceTree = "<group>"; };
 		5DCC586B1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeTutorialPageViewController.m; sourceTree = "<group>"; };
 		5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeTutorialPageViewController.xib; sourceTree = "<group>"; };
-		5DCC586F1B4066A7006281B7 /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step1.png; path = ../../../Desktop/step1.png; sourceTree = "<group>"; };
-		5DCC58701B4066A7006281B7 /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step2.png; path = ../../../Desktop/step2.png; sourceTree = "<group>"; };
-		5DCC58711B4066A7006281B7 /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step3.png; path = ../../../Desktop/step3.png; sourceTree = "<group>"; };
-		5DCC58721B4066A7006281B7 /* step4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step4.png; path = ../../../Desktop/step4.png; sourceTree = "<group>"; };
-		5DCC58731B4066A7006281B7 /* step5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step5.png; path = ../../../Desktop/step5.png; sourceTree = "<group>"; };
-		5DCC58741B4066A7006281B7 /* step6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step6.png; path = ../../../Desktop/step6.png; sourceTree = "<group>"; };
 		5DCC587B1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeSavedTracksTableViewController.h; sourceTree = "<group>"; };
 		5DCC587C1B4099E3006281B7 /* ThugLifeSavedTracksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeSavedTracksTableViewController.m; sourceTree = "<group>"; };
-		5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tupac_lyrics.txt; path = ../../../Desktop/tupac_lyrics.txt; sourceTree = "<group>"; };
 		5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ThugLifeKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCC58961B42EB95006281B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DCC58971B42EB95006281B7 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
@@ -180,13 +200,12 @@
 		5D9162461B3C6B0000F5B8EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DCC588D1B42E904006281B7 /* tupac_lyrics.txt */,
-				5DCC586F1B4066A7006281B7 /* step1.png */,
-				5DCC58701B4066A7006281B7 /* step2.png */,
-				5DCC58711B4066A7006281B7 /* step3.png */,
-				5DCC58721B4066A7006281B7 /* step4.png */,
-				5DCC58731B4066A7006281B7 /* step5.png */,
-				5DCC58741B4066A7006281B7 /* step6.png */,
+				468587DB1C29EF1800741F78 /* step1.png */,
+				468587DC1C29EF1800741F78 /* step3.png */,
+				468587DE1C29EF1800741F78 /* step4.png */,
+				468587DF1C29EF1800741F78 /* step5.png */,
+				468587E01C29EF1800741F78 /* step2.png */,
+				468587E11C29EF1800741F78 /* step6.png */,
 				5D9162471B3C6B0000F5B8EC /* Info.plist */,
 				5D9162481B3C6B0000F5B8EC /* main.m */,
 			);
@@ -226,6 +245,10 @@
 				5DCC58A91B435F5E006281B7 /* ThugLifeLyricTableViewCell.h */,
 				5DCC58AA1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m */,
 				5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */,
+				468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */,
+				468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */,
+				468587EC1C29F27A00741F78 /* CategoryPicker.h */,
+				468587ED1C29F27A00741F78 /* CategoryPicker.m */,
 			);
 			path = ThugLifeKeyboard;
 			sourceTree = "<group>";
@@ -233,6 +256,14 @@
 		5DCC58951B42EB95006281B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				468587C91C29EBE200741F78 /* Better Dayz.png */,
+				468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */,
+				468587CB1C29EBE200741F78 /* The Art of War.png */,
+				468587CC1C29EBE200741F78 /* Thug Life Volume One.png */,
+				468587CD1C29EBE200741F78 /* Tupac Resurrection.png */,
+				468587CE1C29EBE200741F78 /* tupac_lyrics.txt */,
+				468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */,
+				468587D01C29EBE200741F78 /* Until the End of Time.png */,
 				5DCC58961B42EB95006281B7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -342,15 +373,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9162731B3C701F00F5B8EC /* MainThugLifeViewController.xib in Resources */,
-				5DCC58791B4066A7006281B7 /* step5.png in Resources */,
-				5DCC588E1B42E904006281B7 /* tupac_lyrics.txt in Resources */,
-				5DCC58751B4066A7006281B7 /* step1.png in Resources */,
-				5DCC58771B4066A7006281B7 /* step3.png in Resources */,
+				468587E61C29EF1800741F78 /* step5.png in Resources */,
+				468587E31C29EF1800741F78 /* step3.png in Resources */,
+				468587E81C29EF1800741F78 /* step6.png in Resources */,
+				468587E21C29EF1800741F78 /* step1.png in Resources */,
+				468587E71C29EF1800741F78 /* step2.png in Resources */,
 				5D9162571B3C6B0000F5B8EC /* LaunchScreen.xib in Resources */,
-				5DCC58781B4066A7006281B7 /* step4.png in Resources */,
-				5DCC587A1B4066A7006281B7 /* step6.png in Resources */,
+				468587E51C29EF1800741F78 /* step4.png in Resources */,
 				5D9162541B3C6B0000F5B8EC /* Images.xcassets in Resources */,
-				5DCC58761B4066A7006281B7 /* step2.png in Resources */,
 				5DCC586E1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,8 +396,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468587D71C29EBE200741F78 /* tupac_lyrics.xlsx in Resources */,
+				468587D31C29EBE200741F78 /* The Art of War.png in Resources */,
+				468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */,
+				468587D61C29EBE200741F78 /* tupac_lyrics.txt in Resources */,
+				468587D81C29EBE200741F78 /* Until the End of Time.png in Resources */,
 				5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */,
+				468587D11C29EBE200741F78 /* Better Dayz.png in Resources */,
+				468587D51C29EBE200741F78 /* Tupac Resurrection.png in Resources */,
 				5DCC58AD1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib in Resources */,
+				468587D41C29EBE200741F78 /* Thug Life Volume One.png in Resources */,
 				5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */,
 				5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */,
 			);
@@ -401,9 +439,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */,
+				468587EB1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m in Sources */,
 				5DCC58AC1B435F5E006281B7 /* ThugLifeLyricTableViewCell.m in Sources */,
 				46E04C881C28EC1300E5E64B /* ThugLifeLyrics.m in Sources */,
 				46E04C8B1C28EC1D00E5E64B /* LyricsManager.m in Sources */,
+				468587EE1C29F27A00741F78 /* CategoryPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
