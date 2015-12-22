@@ -62,21 +62,14 @@
 }
 
 - (IBAction)categoryPickerButtonTapped:(id)sender {
-    //If toolbar is expanded then update lyrics according to category and remove tableview for categories
-    //If toolbar is not expanded then add tableview to subview
-	
 	
     if (!_isCategoryPickerVisible) {
 		[_categoryPicker showCategoryPicker:true];
-		_isCategoryPickerVisible = true;
+		[self categoryPickerWillOpen];
         
     } else {
 		[_categoryPicker showCategoryPicker:false];
-        _isCategoryPickerVisible = NO;
-        if (self.currentCategory) {
-            [self.lyricsTableView reloadData];
-        }
-        
+		[self categoryPickerWillClose];
     }
 }
 
@@ -133,14 +126,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSArray *allCategories = [[LyricsManager sharedManager] allCategories];
 	_currentCategory = allCategories[index];
 	[_lyricsTableView reloadData];
+	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
-	
+	_isCategoryPickerVisible = false;
+	[self.lyricsTableView reloadData];
 }
 
 - (void)categoryPickerWillOpen {
-	
+	_isCategoryPickerVisible = true;
 }
 
 @end

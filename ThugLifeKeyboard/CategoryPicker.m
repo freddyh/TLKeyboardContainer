@@ -53,6 +53,7 @@
 - (void)showCategoryPicker:(BOOL)shouldOpen {
 	
 	if (shouldOpen) {
+		[_delegate categoryPickerWillOpen];
 		[UIView animateWithDuration:0.2 animations:^{
 			CGRect containerRect = _originView.frame;
 			//containerRect.origin.y = _originView.frame.size.height;
@@ -60,6 +61,7 @@
 			[_containerView setFrame:containerRect];
 		}];
 	} else {
+		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
 			CGRect newRect = _originView.frame;
 			newRect.origin.y = _originView.frame.size.height;
