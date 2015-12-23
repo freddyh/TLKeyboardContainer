@@ -91,23 +91,16 @@
 
 #pragma mark CategoryPickerDelegate Methods
 
-- (void)categoryPickerDidSelectItemAtIndex:(int)index {
+- (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName {
 
-	//How to determine if index is zero or not set?
-	
-	
-	_currentCategory = [_categoryData objectAtIndex:index];
-	[_lyricsTableView reloadData];
+	_currentCategory = categoryName == nil ? @"No Category Selected" : categoryName;
 	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
 	
-	_isCategoryPickerVisible = false;
 	[_lyricsTableView reloadData];
-	
-	//If there is no selected category,
-	//the button should say "Select category"
+	_isCategoryPickerVisible = false;
 	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
 }
 

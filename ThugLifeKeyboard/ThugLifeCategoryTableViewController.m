@@ -7,10 +7,12 @@
 //
 
 #import "ThugLifeCategoryTableViewController.h"
+#import "LyricsManager.h"
 
 @interface ThugLifeCategoryTableViewController ()
 
-@property NSIndexPath *selectedIndex;
+@property NSUInteger selectedIndex;
+@property NSArray *tableData;
 
 @end
 
@@ -18,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	_tableData = [[LyricsManager sharedManager] allCategories];
+	if (_selectedCategoryName != nil) {
+		_selectedIndex = [_tableData indexOfObject:_selectedCategoryName];
+	}
 }
 
 #pragma mark - Table view data source
@@ -40,8 +46,12 @@
 	}
 	
 	cell.textLabel.text = [_tableData objectAtIndex:[indexPath row]];
-	if (_selectedIndex != nil) {
-		cell.accessoryType = indexPath.row == _selectedIndex.row ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	
+	
+	if (_selectedCategoryName != nil && _selectedIndex == [indexPath row]) {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	
     
@@ -49,21 +59,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	[tableView deselectRowAtIndexPath:indexPath animated:false];
-	[_delegate thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:indexPath];
-	
-	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
-	if (_selectedIndex.row == indexPath.row && _selectedIndex != nil) {
-	cell.accessoryType = UITableViewCellAccessoryNone;
-	_selectedIndex = nil;
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	
+	if (_selectedIndex == [indexPath row]) {
+		_selectedCategoryName = nil;
 	} else {
-		_selectedIndex = indexPath;
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		_selectedIndex = [indexPath row];
+		_selectedCategoryName = [_tableData objectAtIndex: _selectedIndex];
 	}
 	
-	[tableView reloadData];
+	cell.accessoryType = (cell.accessoryType != UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:false];
+	[_delegate thugLifeCategoryTableViewControllerDidSelectItem:_selectedCategoryName];
 }
 
 @end
