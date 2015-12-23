@@ -40,7 +40,6 @@
 		5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */; };
 		5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A51B42F0F6006281B7 /* globe-button.png */; };
 		5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */; };
-		5DCC58AD1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +120,6 @@
 		5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeKeyboardView.xib; sourceTree = "<group>"; };
 		5DCC58A51B42F0F6006281B7 /* globe-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button.png"; sourceTree = "<group>"; };
 		5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button@2x.png"; sourceTree = "<group>"; };
-		5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeLyricTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,13 +226,10 @@
 				46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */,
 				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
 				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
-				5DCC58A51B42F0F6006281B7 /* globe-button.png */,
-				5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */,
 				5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */,
 				5DCC58971B42EB95006281B7 /* KeyboardViewController.h */,
 				5DCC58981B42EB95006281B7 /* KeyboardViewController.m */,
 				5DCC58951B42EB95006281B7 /* Supporting Files */,
-				5DCC58AB1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib */,
 				468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */,
 				468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */,
 				468587EC1C29F27A00741F78 /* CategoryPicker.h */,
@@ -246,6 +241,8 @@
 		5DCC58951B42EB95006281B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DCC58A51B42F0F6006281B7 /* globe-button.png */,
+				5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */,
 				468587C91C29EBE200741F78 /* Better Dayz.png */,
 				468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */,
 				468587CB1C29EBE200741F78 /* The Art of War.png */,
@@ -396,7 +393,6 @@
 				5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */,
 				468587D11C29EBE200741F78 /* Better Dayz.png in Resources */,
 				468587D51C29EBE200741F78 /* Tupac Resurrection.png in Resources */,
-				5DCC58AD1B435F5E006281B7 /* ThugLifeLyricTableViewCell.xib in Resources */,
 				468587D41C29EBE200741F78 /* Thug Life Volume One.png in Resources */,
 				5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */,
 				5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */,

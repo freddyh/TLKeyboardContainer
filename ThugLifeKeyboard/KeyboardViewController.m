@@ -13,9 +13,9 @@
 
 @property (nonatomic, strong) IBOutlet UIButton *nextKeyboardButton;
 @property (strong, nonatomic) IBOutlet UIButton *categoryPickerButton;
-@property (strong, nonatomic) IBOutlet UITableView *lyricsTableView;
 @property (strong, nonatomic) IBOutlet UIView *toolbarView;
 
+@property (strong, nonatomic) UITableView *lyricsTableView;
 @property (strong, nonatomic) CategoryPicker *categoryPicker;
 @property (strong, nonatomic) NSString *currentCategory;
 @property (strong, nonatomic) NSArray *dataArray;
@@ -33,7 +33,6 @@
 - (IBAction)nextKeyboard:(id)sender {
     
     [self advanceToNextInputMode];
-    
 }
 
 - (void)viewDidLoad {
@@ -42,15 +41,9 @@
     UINib *nib = [UINib nibWithNibName:@"ThugLifeKeyboardView" bundle:nil];
     NSArray *arr = [nib instantiateWithOwner:self options:nil];
     self.view = arr[0];
-    
-    [self.lyricsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.lyricsTableView setDelegate:self];
-    [self.lyricsTableView setDataSource:self];
 	
-	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:[[LyricsManager sharedManager] allCategories]];
-	[bottomBarCategoryPicker setDelegate:self];
-    _categoryPicker = bottomBarCategoryPicker;
-	_isCategoryPickerVisible = NO;
+	[self setupTableView];
+	[self setupCategoryPicker];
 }
 
 - (IBAction)categoryPickerButtonTapped:(id)sender {
@@ -60,6 +53,26 @@
     } else {
 		[_categoryPicker showCategoryPicker:false];
     }
+}
+
+- (void)setupTableView {
+	
+	CGRect tableViewRect = [[self view] frame];
+	tableViewRect.size.height -= [_toolbarView frame].size.height;
+	_lyricsTableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
+	[_lyricsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+	[_lyricsTableView setDelegate:self];
+	[_lyricsTableView setDataSource:self];
+	
+	[[self view] addSubview:_lyricsTableView];
+}
+
+- (void)setupCategoryPicker {
+	
+	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:[[LyricsManager sharedManager] allCategories]];
+	[bottomBarCategoryPicker setDelegate:self];
+	_categoryPicker = bottomBarCategoryPicker;
+	_isCategoryPickerVisible = NO;
 }
 
 #pragma mark UITableViewDataSource Methods
@@ -77,14 +90,14 @@
 	
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-		[[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-		[[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
-		[[cell textLabel] setNumberOfLines:0];
+		
 	}
 	
     NSArray *lyricsArray = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
 	ThugLifeLyrics *song = [lyricsArray objectAtIndex:[indexPath row]];
 	[[cell textLabel] setText:[song lyric]];
+	[[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
+	[[cell textLabel] setNumberOfLines:0];
 	return cell;
 }
 
