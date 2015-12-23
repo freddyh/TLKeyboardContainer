@@ -74,33 +74,6 @@
         
         newLyric.savedTrack = NO;
         newLyric.usedCount = 0;
-        
-//        SPTSession *currentSession = [[SPTAuth defaultInstance] session];
-//        NSString *spotifyQuery = [newLyric.songTitle stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-//        [SPTRequest performSearchWithQuery:spotifyQuery queryType:SPTQueryTypeTrack session:currentSession callback:^(NSError *error, SPTListPage *list) {
-//            if (error) {
-//                NSLog(@"Error: %@", error.description);
-//            } else {
-//                NSArray *items = list.items;
-//                for (id obj in items) {
-//                    NSString *albumName = obj[@"name"];
-//                    if ([albumName isEqualToString:newLyric.albumTitle]) {
-//                        
-//                        //Save the track uri
-//                        newLyric.spotifyURI = obj[@"uri"];
-//                        
-//                        //Save the first image result
-//                        SPTImage *spotifyImage = obj[@"images"][0];
-//                        NSURL *imageURL = spotifyImage.imageURL;
-//                        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-//                        UIImage *image = [UIImage imageWithData:imageData];
-//                        newLyric.thumbnail = image;
-//                    }
-//                }
-//            }
-//            
-//        }];
-        
 
         [_lyricsArray addObject:newLyric];
     }
@@ -116,6 +89,7 @@
 
 - (NSArray *)fetchForCategory:(NSString *)name
 {
+	//If no category name is provided then return all lyrics
     if (!name) {
         return _lyricsArray;
     }

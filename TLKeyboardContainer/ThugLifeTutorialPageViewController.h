@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//A View Controller for displaying an image that demonstrates how to install the app
+
 @interface ThugLifeTutorialPageViewController : UIViewController
 
 @property (nonatomic) NSInteger index;

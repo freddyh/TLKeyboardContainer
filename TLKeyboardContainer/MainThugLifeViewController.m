@@ -10,10 +10,6 @@
 #import "MainThugLifeViewController.h"
 #import "ThugLifeTutorialPageViewController.h"
 
-static NSString * const kClientId = @"8525e4ddf7ca4415919b7bb2eecbf820";
-static NSString * const kCallbackURL = @"thuglife://callback";
-static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
-
 @interface MainThugLifeViewController () < MFMailComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *tutorialTitlesArray;
@@ -31,10 +27,6 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
     NSArray *imageTitles = @[@"step1.png", @"step2.png", @"step3.png", @"step4.png", @"step5.png", @"step6.png"];
     self.tutorialTitlesArray = titlesArray;
     self.imageTitlesArray = imageTitles;
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated {
     
 }
 
@@ -61,14 +53,14 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
 
 - (IBAction)rateButtonTapped:(id)sender {
     
-    //replace the link when app is added to the store
+    //Remember to replace the link when app is added to the store
     NSString *iTunesLink = @"https://itunes.apple.com/us/app/apple-store";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
 }
 
 - (IBAction)contactButtonTapped:(id)sender {
     
-    //compose email with recipient and body
+    //Compose email with recipient and body
     
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailVC = [MFMailComposeViewController new];
@@ -146,7 +138,7 @@ static NSString * const kTokenSwapURL = @"http://localhost:1234/swap";
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self.tutorialTitlesArray count];
+    return [_tutorialTitlesArray count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
