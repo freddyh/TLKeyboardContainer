@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController">
             <connections>
                 <outlet property="categoryPickerButton" destination="SX4-Qp-SMt" id="BZ6-6x-zMz"/>
-                <outlet property="lyricsTableView" destination="hoA-wE-5CF" id="qZn-hU-x6a"/>
                 <outlet property="nextKeyboardButton" destination="QKn-8K-X8U" id="Jxy-vA-jmk"/>
                 <outlet property="toolbarView" destination="qbd-1o-cNE" id="dQv-C1-bBb"/>
             </connections>
@@ -18,14 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-wE-5CF" userLabel="Lyrics Table View">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="a2U-G1-IMX"/>
-                        <outlet property="delegate" destination="-1" id="Rm8-oS-bpU"/>
-                    </connections>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-1o-cNE" userLabel="Toolbar View">
                     <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                     <subviews>
@@ -43,10 +34,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX4-Qp-SMt" userLabel="Category Picker Button">
-                            <rect key="frame" x="94" y="0.0" width="132" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="e8q-i9-3bE"/>
-                            </constraints>
+                            <rect key="frame" x="46" y="0.0" width="266" height="44"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                             <state key="normal" title="Select a category">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,22 +48,19 @@
                     <color key="backgroundColor" red="0.18557932733978019" green="0.39917708392035162" blue="0.68315972222222221" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="QKn-8K-X8U" firstAttribute="leading" secondItem="qbd-1o-cNE" secondAttribute="leading" constant="8" id="1La-ur-CjV"/>
+                        <constraint firstItem="SX4-Qp-SMt" firstAttribute="top" secondItem="qbd-1o-cNE" secondAttribute="top" id="6hs-7e-eNR"/>
                         <constraint firstAttribute="bottom" secondItem="QKn-8K-X8U" secondAttribute="bottom" constant="7" id="8fs-vJ-nLV"/>
                         <constraint firstAttribute="height" constant="44" id="Ax9-IS-HrI"/>
-                        <constraint firstAttribute="centerX" secondItem="SX4-Qp-SMt" secondAttribute="centerX" id="U73-SE-wOk"/>
+                        <constraint firstAttribute="bottom" secondItem="SX4-Qp-SMt" secondAttribute="bottom" id="CAd-Rf-GD4"/>
+                        <constraint firstItem="SX4-Qp-SMt" firstAttribute="leading" secondItem="QKn-8K-X8U" secondAttribute="trailing" constant="8" id="VLP-NR-W1E"/>
+                        <constraint firstAttribute="trailing" secondItem="SX4-Qp-SMt" secondAttribute="trailing" constant="8" id="WN4-q2-gxF"/>
                         <constraint firstItem="QKn-8K-X8U" firstAttribute="top" secondItem="qbd-1o-cNE" secondAttribute="top" constant="7" id="fBp-mk-beD"/>
-                        <constraint firstAttribute="centerY" secondItem="SX4-Qp-SMt" secondAttribute="centerY" id="oIl-iV-UAp"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="hoA-wE-5CF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0c9-oW-VIL"/>
                 <constraint firstAttribute="bottom" secondItem="qbd-1o-cNE" secondAttribute="bottom" id="3J8-b0-Q5K"/>
-                <constraint firstItem="hoA-wE-5CF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bmt-m3-Ghx"/>
-                <constraint firstItem="qbd-1o-cNE" firstAttribute="top" secondItem="hoA-wE-5CF" secondAttribute="bottom" id="FaB-Bt-yoc"/>
-                <constraint firstAttribute="trailing" secondItem="hoA-wE-5CF" secondAttribute="trailing" id="ObV-lg-hnX"/>
-                <constraint firstItem="qbd-1o-cNE" firstAttribute="top" secondItem="hoA-wE-5CF" secondAttribute="bottom" id="Vrb-ZY-w7c"/>
                 <constraint firstAttribute="trailing" secondItem="qbd-1o-cNE" secondAttribute="trailing" id="ea2-uq-cjh"/>
                 <constraint firstItem="qbd-1o-cNE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kni-km-bOj"/>
             </constraints>
