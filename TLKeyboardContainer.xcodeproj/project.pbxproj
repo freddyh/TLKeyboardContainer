@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		460580811C2A55B3005F781E /* AllLyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 460580801C2A55B3005F781E /* AllLyricsView.m */; };
+		462DE67D1C2A6D520091BF69 /* tupac_lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 462DE67C1C2A6D520091BF69 /* tupac_lyrics.txt */; };
 		468587D11C29EBE200741F78 /* Better Dayz.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587C91C29EBE200741F78 /* Better Dayz.png */; };
 		468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */; };
 		468587D31C29EBE200741F78 /* The Art of War.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CB1C29EBE200741F78 /* The Art of War.png */; };
 		468587D41C29EBE200741F78 /* Thug Life Volume One.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CC1C29EBE200741F78 /* Thug Life Volume One.png */; };
 		468587D51C29EBE200741F78 /* Tupac Resurrection.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CD1C29EBE200741F78 /* Tupac Resurrection.png */; };
-		468587D61C29EBE200741F78 /* tupac_lyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 468587CE1C29EBE200741F78 /* tupac_lyrics.txt */; };
-		468587D71C29EBE200741F78 /* tupac_lyrics.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */; };
 		468587D81C29EBE200741F78 /* Until the End of Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587D01C29EBE200741F78 /* Until the End of Time.png */; };
 		468587E21C29EF1800741F78 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DB1C29EF1800741F78 /* step1.png */; };
 		468587E31C29EF1800741F78 /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DC1C29EF1800741F78 /* step3.png */; };
@@ -77,13 +76,12 @@
 /* Begin PBXFileReference section */
 		4605807F1C2A55B3005F781E /* AllLyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLyricsView.h; sourceTree = "<group>"; };
 		460580801C2A55B3005F781E /* AllLyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLyricsView.m; sourceTree = "<group>"; };
+		462DE67C1C2A6D520091BF69 /* tupac_lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tupac_lyrics.txt; sourceTree = "<group>"; };
 		468587C91C29EBE200741F78 /* Better Dayz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Better Dayz.png"; sourceTree = "<group>"; };
 		468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R U Still Down_ (Remember Me).png"; sourceTree = "<group>"; };
 		468587CB1C29EBE200741F78 /* The Art of War.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Art of War.png"; sourceTree = "<group>"; };
 		468587CC1C29EBE200741F78 /* Thug Life Volume One.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thug Life Volume One.png"; sourceTree = "<group>"; };
 		468587CD1C29EBE200741F78 /* Tupac Resurrection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tupac Resurrection.png"; sourceTree = "<group>"; };
-		468587CE1C29EBE200741F78 /* tupac_lyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tupac_lyrics.txt; sourceTree = "<group>"; };
-		468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = tupac_lyrics.xlsx; sourceTree = "<group>"; };
 		468587D01C29EBE200741F78 /* Until the End of Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Until the End of Time.png"; sourceTree = "<group>"; };
 		468587DB1C29EF1800741F78 /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
 		468587DC1C29EF1800741F78 /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
@@ -246,6 +244,7 @@
 		5DCC58951B42EB95006281B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				462DE67C1C2A6D520091BF69 /* tupac_lyrics.txt */,
 				5DCC58A51B42F0F6006281B7 /* globe-button.png */,
 				5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */,
 				468587C91C29EBE200741F78 /* Better Dayz.png */,
@@ -253,8 +252,6 @@
 				468587CB1C29EBE200741F78 /* The Art of War.png */,
 				468587CC1C29EBE200741F78 /* Thug Life Volume One.png */,
 				468587CD1C29EBE200741F78 /* Tupac Resurrection.png */,
-				468587CE1C29EBE200741F78 /* tupac_lyrics.txt */,
-				468587CF1C29EBE200741F78 /* tupac_lyrics.xlsx */,
 				468587D01C29EBE200741F78 /* Until the End of Time.png */,
 				5DCC58961B42EB95006281B7 /* Info.plist */,
 			);
@@ -390,10 +387,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468587D71C29EBE200741F78 /* tupac_lyrics.xlsx in Resources */,
 				468587D31C29EBE200741F78 /* The Art of War.png in Resources */,
 				468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */,
-				468587D61C29EBE200741F78 /* tupac_lyrics.txt in Resources */,
+				462DE67D1C2A6D520091BF69 /* tupac_lyrics.txt in Resources */,
 				468587D81C29EBE200741F78 /* Until the End of Time.png in Resources */,
 				5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */,
 				468587D11C29EBE200741F78 /* Better Dayz.png in Resources */,

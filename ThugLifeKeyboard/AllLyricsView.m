@@ -30,6 +30,8 @@
 	_containerView = [[UIView alloc] initWithFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
 	[_originView addSubview:_containerView];
 	_thugLifeLyricsTableView = [[UITableView alloc] initWithFrame:_containerView.frame style:UITableViewStylePlain];
+	[_thugLifeLyricsTableView setDelegate:self];
+	[_thugLifeLyricsTableView setDataSource:self];
 	[_thugLifeLyricsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"LyricCell"];
 	[_containerView addSubview:_thugLifeLyricsTableView];
 	
@@ -76,7 +78,7 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	int row = [indexPath row];
-	NSString *lyric = [_lyricData objectAtIndex:row];
+	NSString *lyric = [[_lyricData objectAtIndex:row] lyric];
 	[_delegate lyricsViewDidSelectItem:lyric AtIndex:row];
 	
 	
