@@ -17,12 +17,9 @@
 @property (nonatomic, strong) NSString *thugLifeTrackId;
 
 @property (nonatomic, strong) NSString *lyricType;
-@property (nonatomic, strong) NSString *spotifyURI;
 @property (nonatomic, strong) UIImage *thumbnail;
 
 @property (nonatomic) BOOL savedTrack;
 @property (nonatomic) NSInteger usedCount;
-
-- (void)setThumbnailFromImage:(UIImage *)image;
 
 @end

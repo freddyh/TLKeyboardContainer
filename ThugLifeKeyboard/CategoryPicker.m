@@ -44,7 +44,7 @@
 	[_thugLifeCategoryTableViewController.tableView setFrame:_containerView.bounds];
 	[_thugLifeCategoryTableViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[_thugLifeCategoryTableViewController.tableView setScrollsToTop:false];
-	[_thugLifeCategoryTableViewController.tableView setBackgroundColor:[UIColor blueColor]];
+	[_thugLifeCategoryTableViewController.tableView setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
 	[_thugLifeCategoryTableViewController.tableView reloadData];
 	
 	[_containerView addSubview:_thugLifeCategoryTableViewController.tableView];

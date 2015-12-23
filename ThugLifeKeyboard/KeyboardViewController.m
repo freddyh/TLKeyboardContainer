@@ -7,7 +7,6 @@
 //
 
 #import "KeyboardViewController.h"
-#import "ThugLifeLyricTableViewCell.h"
 #import "CategoryPicker.h"
 
 @interface KeyboardViewController ()<UITableViewDataSource, UITableViewDelegate, CategoryPickerDelegate>
@@ -29,8 +28,6 @@
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
-    
-    // Add custom view sizing constraints here
 }
 
 - (IBAction)nextKeyboard:(id)sender {
@@ -42,34 +39,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _isCategoryPickerVisible = NO;
-    
     UINib *nib = [UINib nibWithNibName:@"ThugLifeKeyboardView" bundle:nil];
     NSArray *arr = [nib instantiateWithOwner:self options:nil];
     self.view = arr[0];
     
     [self.lyricsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.lyricsTableView setRestorationIdentifier:@"ThugLifeLyricsTable"];
     [self.lyricsTableView setDelegate:self];
     [self.lyricsTableView setDataSource:self];
-    [self.lyricsTableView setEstimatedRowHeight:50];
-    [self.lyricsTableView setRowHeight:UITableViewAutomaticDimension];
 	
 	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:[[LyricsManager sharedManager] allCategories]];
 	[bottomBarCategoryPicker setDelegate:self];
     _categoryPicker = bottomBarCategoryPicker;
-    
+	_isCategoryPickerVisible = NO;
 }
 
 - (IBAction)categoryPickerButtonTapped:(id)sender {
 	
     if (!_isCategoryPickerVisible) {
 		[_categoryPicker showCategoryPicker:true];
-		[self categoryPickerWillOpen];
-        
     } else {
 		[_categoryPicker showCategoryPicker:false];
-		[self categoryPickerWillClose];
     }
 }
 
@@ -88,6 +77,8 @@
 	
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+		[[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
+		[[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
 		[[cell textLabel] setNumberOfLines:0];
 	}
 	
@@ -98,6 +89,15 @@
 }
 
 #pragma mark UITableViewDelegate Methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewAutomaticDimension;
+}
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

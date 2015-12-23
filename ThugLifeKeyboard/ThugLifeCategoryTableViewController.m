@@ -10,6 +10,8 @@
 
 @interface ThugLifeCategoryTableViewController ()
 
+@property NSIndexPath *selectedIndexPath;
+
 @end
 
 @implementation ThugLifeCategoryTableViewController
@@ -27,22 +29,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-    return _tableData.count;
+    return [_tableData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThugLifeCell"];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ThugLifeCell"];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CategoryCell"];
 	}
 	
-	cell.textLabel.text = _tableData[indexPath.row];
+	cell.textLabel.text = [_tableData objectAtIndex:[indexPath row]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:false];
 	[_delegate thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:indexPath];
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	cell.accessoryType = (cell.accessoryType == UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;

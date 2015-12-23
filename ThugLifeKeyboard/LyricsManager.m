@@ -7,7 +7,6 @@
 //
 
 #import "LyricsManager.h"
-//#import "FHJImageView.h"
 
 @interface LyricsManager ()
 
@@ -72,9 +71,6 @@
         newLyric.lyricType = lyricDetails[1];
         newLyric.songTitle = lyricDetails[2];
         newLyric.albumTitle = lyricDetails[3];
-        
-        NSString *imageName = [newLyric.albumTitle stringByAppendingString:@".png"];
-        [newLyric setThumbnailFromImage:[UIImage imageNamed:imageName]];
         
         newLyric.savedTrack = NO;
         newLyric.usedCount = 0;
