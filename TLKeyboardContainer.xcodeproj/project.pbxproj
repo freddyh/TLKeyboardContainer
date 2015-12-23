@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460580811C2A55B3005F781E /* AllLyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 460580801C2A55B3005F781E /* AllLyricsView.m */; };
 		468587D11C29EBE200741F78 /* Better Dayz.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587C91C29EBE200741F78 /* Better Dayz.png */; };
 		468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */; };
 		468587D31C29EBE200741F78 /* The Art of War.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587CB1C29EBE200741F78 /* The Art of War.png */; };
@@ -74,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4605807F1C2A55B3005F781E /* AllLyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLyricsView.h; sourceTree = "<group>"; };
+		460580801C2A55B3005F781E /* AllLyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLyricsView.m; sourceTree = "<group>"; };
 		468587C91C29EBE200741F78 /* Better Dayz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Better Dayz.png"; sourceTree = "<group>"; };
 		468587CA1C29EBE200741F78 /* R U Still Down_ (Remember Me).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R U Still Down_ (Remember Me).png"; sourceTree = "<group>"; };
 		468587CB1C29EBE200741F78 /* The Art of War.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Art of War.png"; sourceTree = "<group>"; };
@@ -222,18 +225,20 @@
 		5DCC58941B42EB95006281B7 /* ThugLifeKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				46E04C891C28EC1D00E5E64B /* LyricsManager.h */,
-				46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */,
-				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
-				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
-				5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */,
+				4605807F1C2A55B3005F781E /* AllLyricsView.h */,
+				460580801C2A55B3005F781E /* AllLyricsView.m */,
+				468587EC1C29F27A00741F78 /* CategoryPicker.h */,
+				468587ED1C29F27A00741F78 /* CategoryPicker.m */,
 				5DCC58971B42EB95006281B7 /* KeyboardViewController.h */,
 				5DCC58981B42EB95006281B7 /* KeyboardViewController.m */,
+				46E04C891C28EC1D00E5E64B /* LyricsManager.h */,
+				46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */,
 				5DCC58951B42EB95006281B7 /* Supporting Files */,
 				468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */,
 				468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */,
-				468587EC1C29F27A00741F78 /* CategoryPicker.h */,
-				468587ED1C29F27A00741F78 /* CategoryPicker.m */,
+				5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */,
+				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
+				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
 			);
 			path = ThugLifeKeyboard;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				468587EB1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m in Sources */,
 				46E04C881C28EC1300E5E64B /* ThugLifeLyrics.m in Sources */,
 				46E04C8B1C28EC1D00E5E64B /* LyricsManager.m in Sources */,
+				460580811C2A55B3005F781E /* AllLyricsView.m in Sources */,
 				468587EE1C29F27A00741F78 /* CategoryPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

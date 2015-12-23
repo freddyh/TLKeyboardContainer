@@ -8,8 +8,9 @@
 
 #import "KeyboardViewController.h"
 #import "CategoryPicker.h"
+#import "AllLyricsView.h"
 
-@interface KeyboardViewController ()<UITableViewDataSource, UITableViewDelegate, CategoryPickerDelegate>
+@interface KeyboardViewController ()<CategoryPickerDelegate, AllLyricsViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *nextKeyboardButton;
 @property (strong, nonatomic) IBOutlet UIButton *categoryPickerButton;
@@ -17,8 +18,9 @@
 
 @property (strong, nonatomic) UITableView *lyricsTableView;
 @property (strong, nonatomic) CategoryPicker *categoryPicker;
+@property (strong, nonatomic) NSArray *categoryData;
+@property (strong, nonatomic) AllLyricsView *allLyricsView;
 @property (strong, nonatomic) NSString *currentCategory;
-@property (strong, nonatomic) NSArray *dataArray;
 
 @property (nonatomic) BOOL isCategoryPickerVisible;
 
@@ -57,66 +59,18 @@
 
 - (void)setupTableView {
 	
-	CGRect tableViewRect = [[self view] frame];
-	tableViewRect.size.height -= [_toolbarView frame].size.height;
-	_lyricsTableView = [[UITableView alloc] initWithFrame:tableViewRect style:UITableViewStylePlain];
-	[_lyricsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-	[_lyricsTableView setDelegate:self];
-	[_lyricsTableView setDataSource:self];
+	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
+	[_allLyricsView setDelegate:self];
 	
-	[[self view] addSubview:_lyricsTableView];
 }
 
 - (void)setupCategoryPicker {
 	
-	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:[[LyricsManager sharedManager] allCategories]];
+	_categoryData = [[LyricsManager sharedManager] allCategories];
+	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:_categoryData];
 	[bottomBarCategoryPicker setDelegate:self];
 	_categoryPicker = bottomBarCategoryPicker;
 	_isCategoryPickerVisible = NO;
-}
-
-#pragma mark UITableViewDataSource Methods
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
-	
-    return [[[LyricsManager sharedManager] fetchForCategory:_currentCategory] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-	
-	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-		
-	}
-	
-    NSArray *lyricsArray = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
-	ThugLifeLyrics *song = [lyricsArray objectAtIndex:[indexPath row]];
-	[[cell textLabel] setText:[song lyric]];
-	[[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-	[[cell textLabel] setNumberOfLines:0];
-	return cell;
-}
-
-#pragma mark UITableViewDelegate Methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 64;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView
-estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return UITableViewAutomaticDimension;
-}
-
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	[self.textDocumentProxy insertText:[[cell textLabel] text]];
 }
 
 - (void)textWillChange:(id<UITextInput>)textInput {
@@ -138,20 +92,29 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark CategoryPickerDelegate Methods
 
 - (void)categoryPickerDidSelectItemAtIndex:(int)index {
-	NSArray *allCategories = [[LyricsManager sharedManager] allCategories];
-	_currentCategory = [allCategories objectAtIndex:index];
+
+	_currentCategory = [_categoryData objectAtIndex:index];
 	[_lyricsTableView reloadData];
 	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
+	
 	_isCategoryPickerVisible = false;
 	[_lyricsTableView reloadData];
 	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
 }
 
 - (void)categoryPickerWillOpen {
+	
 	_isCategoryPickerVisible = true;
+}
+
+#pragma mark AllLyricsViewDelegate Methods
+
+- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(int)index {
+	
+	[[self textDocumentProxy] insertText:item];
 }
 
 @end
