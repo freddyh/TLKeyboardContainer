@@ -93,6 +93,9 @@
 
 - (void)categoryPickerDidSelectItemAtIndex:(int)index {
 
+	//How to determine if index is zero or not set?
+	
+	
 	_currentCategory = [_categoryData objectAtIndex:index];
 	[_lyricsTableView reloadData];
 	[_categoryPicker showCategoryPicker:false];
@@ -102,6 +105,9 @@
 	
 	_isCategoryPickerVisible = false;
 	[_lyricsTableView reloadData];
+	
+	//If there is no selected category,
+	//the button should say "Select category"
 	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
 }
 

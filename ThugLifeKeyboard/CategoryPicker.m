@@ -33,10 +33,7 @@
 
 - (void)setupCategoryPicker {
 	
-	CGRect containerRect = _originView.frame;
-	containerRect.origin.y = _originView.frame.size.height;
-	containerRect.size.height = _originView.frame.size.height - 44.0;
-	_containerView = [[UIView alloc] initWithFrame:containerRect];
+	_containerView = [[UIView alloc] initWithFrame:CGRectMake(0, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
 	
 	[_originView addSubview:_containerView];
 	_thugLifeCategoryTableViewController = [ThugLifeCategoryTableViewController new];
@@ -55,23 +52,20 @@
 	if (shouldOpen) {
 		[_delegate categoryPickerWillOpen];
 		[UIView animateWithDuration:0.2 animations:^{
-			CGRect containerRect = _originView.frame;
-			//containerRect.origin.y = _originView.frame.size.height;
-			containerRect.size.height = _originView.frame.size.height - 44.0;
-			[_containerView setFrame:containerRect];
+			
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
 		}];
 	} else {
 		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
-			CGRect newRect = _originView.frame;
-			newRect.origin.y = _originView.frame.size.height;
-			newRect.size.height = _originView.frame.size.height - 44.0;
-			[_containerView setFrame:newRect];
+			
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
 		}];
 	}
 }
 
 - (void) thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
 	[_delegate categoryPickerDidSelectItemAtIndex:indexPath.row];
 }
 

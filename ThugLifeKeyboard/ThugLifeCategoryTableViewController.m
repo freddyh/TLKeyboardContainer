@@ -10,7 +10,7 @@
 
 @interface ThugLifeCategoryTableViewController ()
 
-@property NSIndexPath *selectedIndexPath;
+@property NSIndexPath *selectedIndex;
 
 @end
 
@@ -40,6 +40,10 @@
 	}
 	
 	cell.textLabel.text = [_tableData objectAtIndex:[indexPath row]];
+	if (_selectedIndex != nil) {
+		cell.accessoryType = indexPath.row == _selectedIndex.row ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	}
+	
     
     return cell;
 }
@@ -48,8 +52,18 @@
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:false];
 	[_delegate thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:indexPath];
+	
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	cell.accessoryType = (cell.accessoryType == UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
+
+	if (_selectedIndex.row == indexPath.row && _selectedIndex != nil) {
+	cell.accessoryType = UITableViewCellAccessoryNone;
+	_selectedIndex = nil;
+	} else {
+		_selectedIndex = indexPath;
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	}
+	
+	[tableView reloadData];
 }
 
 @end
