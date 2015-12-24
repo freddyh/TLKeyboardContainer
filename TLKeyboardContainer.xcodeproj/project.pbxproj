@@ -37,7 +37,6 @@
 		5DCC586E1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC586C1B3D37A8006281B7 /* ThugLifeTutorialPageViewController.xib */; };
 		5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC58981B42EB95006281B7 /* KeyboardViewController.m */; };
 		5DCC589C1B42EB95006281B7 /* ThugLifeKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DCC58931B42EB95006281B7 /* ThugLifeKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */; };
 		5DCC58A71B42F0F6006281B7 /* globe-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A51B42F0F6006281B7 /* globe-button.png */; };
 		5DCC58A81B42F0F6006281B7 /* globe-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */; };
 /* End PBXBuildFile section */
@@ -118,7 +117,6 @@
 		5DCC58961B42EB95006281B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DCC58971B42EB95006281B7 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		5DCC58981B42EB95006281B7 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
-		5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThugLifeKeyboardView.xib; sourceTree = "<group>"; };
 		5DCC58A51B42F0F6006281B7 /* globe-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button.png"; sourceTree = "<group>"; };
 		5DCC58A61B42F0F6006281B7 /* globe-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,7 +232,6 @@
 				5DCC58951B42EB95006281B7 /* Supporting Files */,
 				468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */,
 				468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */,
-				5DCC58A31B42F0A1006281B7 /* ThugLifeKeyboardView.xib */,
 				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
 				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
 			);
@@ -391,7 +388,6 @@
 				468587D21C29EBE200741F78 /* R U Still Down_ (Remember Me).png in Resources */,
 				462DE67D1C2A6D520091BF69 /* tupac_lyrics.txt in Resources */,
 				468587D81C29EBE200741F78 /* Until the End of Time.png in Resources */,
-				5DCC58A41B42F0A1006281B7 /* ThugLifeKeyboardView.xib in Resources */,
 				468587D11C29EBE200741F78 /* Better Dayz.png in Resources */,
 				468587D51C29EBE200741F78 /* Tupac Resurrection.png in Resources */,
 				468587D41C29EBE200741F78 /* Thug Life Volume One.png in Resources */,

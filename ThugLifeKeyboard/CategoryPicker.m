@@ -25,14 +25,14 @@
 	self = [super init];
 	
 	_originView = sourceView;
-	[self setupCategoryPicker];
+	[self setupTableView];
 	
 	_thugLifeCategoryTableViewController.tableData = menuItems;
 	
 	return self;
 }
 
-- (void)setupCategoryPicker {
+- (void)setupTableView {
 	
 	/***
 	 Add _containerView to view hierarchy

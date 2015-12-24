@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LyricsManager.h"
-#import "ThugLifeLyrics.h"
 
 @interface KeyboardViewController : UIInputViewController
 
