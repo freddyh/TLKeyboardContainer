@@ -38,7 +38,7 @@
 	 Add _containerView to view hierarchy
 	 Reduce the height to save space for the toolbar of the keyboard
 	 ***/
-	_containerView = [[UIView alloc] initWithFrame:CGRectMake(0, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
+	_containerView = [[UIView alloc] initWithFrame:CGRectMake(0, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 	[_originView addSubview:_containerView];
 	
 	
@@ -67,13 +67,13 @@
 		[_delegate categoryPickerWillOpen];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	} else {
 		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 44.0)];
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	}
 }
