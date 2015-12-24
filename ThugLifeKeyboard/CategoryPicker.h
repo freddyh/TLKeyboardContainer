@@ -11,7 +11,7 @@
 
 @protocol CategoryPickerDelegate <NSObject>
 
-- (void)categoryPickerDidSelectItemAtIndex:(int)index;
+- (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName;
 
 @optional
 - (void)categoryPickerWillClose;

@@ -8,6 +8,7 @@
 
 #import "CategoryPicker.h"
 #import "ThugLifeCategoryTableViewController.h"
+#import "LyricsManager.h"
 
 @interface CategoryPicker() <ThugLifeCategoryTableViewControllerDelegate>
 
@@ -25,54 +26,62 @@
 	
 	_originView = sourceView;
 	[self setupCategoryPicker];
-	_thugLifeCategoryTableViewController.tableData = menuItems;
 	
+	_thugLifeCategoryTableViewController.tableData = menuItems;
 	
 	return self;
 }
 
 - (void)setupCategoryPicker {
 	
-	CGRect containerRect = _originView.frame;
-	containerRect.origin.y = _originView.frame.size.height;
-	containerRect.size.height = _originView.frame.size.height - 44.0;
-	_containerView = [[UIView alloc] initWithFrame:containerRect];
-	
+	/***
+	 Add _containerView to view hierarchy
+	 Reduce the height to save space for the toolbar of the keyboard
+	 ***/
+	_containerView = [[UIView alloc] initWithFrame:CGRectMake(0, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 	[_originView addSubview:_containerView];
+	
+	
+	/***
+	 Create a TableViewController that fills the _containerView, has no cell separators, and custom blue background color
+	 Data Source comes from LyricsManager
+	 Default selectedCategoryName is nil
+	 ***/
 	_thugLifeCategoryTableViewController = [ThugLifeCategoryTableViewController new];
+	_thugLifeCategoryTableViewController.selectedCategoryName = nil;
 	[_thugLifeCategoryTableViewController setDelegate:self];
 	[_thugLifeCategoryTableViewController.tableView setFrame:_containerView.bounds];
 	[_thugLifeCategoryTableViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[_thugLifeCategoryTableViewController.tableView setScrollsToTop:false];
 	[_thugLifeCategoryTableViewController.tableView setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
-	[_thugLifeCategoryTableViewController.tableView reloadData];
-	
 	[_containerView addSubview:_thugLifeCategoryTableViewController.tableView];
 }
 
 - (void)showCategoryPicker:(BOOL)shouldOpen {
 	
+	
+	/***
+	 The CategoryPicker will animate to the top of _originView or off the bottom of the screen
+	 ***/
 	if (shouldOpen) {
 		[_delegate categoryPickerWillOpen];
 		[UIView animateWithDuration:0.2 animations:^{
-			CGRect containerRect = _originView.frame;
-			//containerRect.origin.y = _originView.frame.size.height;
-			containerRect.size.height = _originView.frame.size.height - 44.0;
-			[_containerView setFrame:containerRect];
+			
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	} else {
 		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
-			CGRect newRect = _originView.frame;
-			newRect.origin.y = _originView.frame.size.height;
-			newRect.size.height = _originView.frame.size.height - 44.0;
-			[_containerView setFrame:newRect];
+			
+			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	}
 }
 
-- (void) thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[_delegate categoryPickerDidSelectItemAtIndex:indexPath.row];
+- (void) thugLifeCategoryTableViewControllerDidSelectItem:(NSString *)categoryName {
+	
+	[_delegate categoryPickerDidSelectItemAtIndex:categoryName];
+	[[_thugLifeCategoryTableViewController tableView] reloadData];
 }
 
 @end

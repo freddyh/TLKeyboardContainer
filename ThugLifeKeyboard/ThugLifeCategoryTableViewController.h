@@ -10,13 +10,14 @@
 
 @protocol ThugLifeCategoryTableViewControllerDelegate <NSObject>
 
-- (void) thugLifeCategoryTableViewControllerDidSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void) thugLifeCategoryTableViewControllerDidSelectItem:(NSString *)categoryName;
 
 @end
 
 @interface ThugLifeCategoryTableViewController : UITableViewController
 
-@property NSArray *tableData;
+@property (weak)NSArray *tableData;
+@property (weak, nonatomic)NSString *selectedCategoryName;
 @property (weak) id <ThugLifeCategoryTableViewControllerDelegate>delegate;
 
 @end
