@@ -34,7 +34,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX4-Qp-SMt" userLabel="Category Picker Button">
-                            <rect key="frame" x="46" y="0.0" width="266" height="44"/>
+                            <rect key="frame" x="8" y="0.0" width="304" height="44"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                             <state key="normal" title="Select A Category Here">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,7 +52,7 @@
                         <constraint firstAttribute="bottom" secondItem="QKn-8K-X8U" secondAttribute="bottom" constant="7" id="8fs-vJ-nLV"/>
                         <constraint firstAttribute="height" constant="44" id="Ax9-IS-HrI"/>
                         <constraint firstAttribute="bottom" secondItem="SX4-Qp-SMt" secondAttribute="bottom" id="CAd-Rf-GD4"/>
-                        <constraint firstItem="SX4-Qp-SMt" firstAttribute="leading" secondItem="QKn-8K-X8U" secondAttribute="trailing" constant="8" id="VLP-NR-W1E"/>
+                        <constraint firstItem="SX4-Qp-SMt" firstAttribute="leading" secondItem="QKn-8K-X8U" secondAttribute="trailing" constant="-30" id="VLP-NR-W1E"/>
                         <constraint firstAttribute="trailing" secondItem="SX4-Qp-SMt" secondAttribute="trailing" constant="8" id="WN4-q2-gxF"/>
                         <constraint firstItem="QKn-8K-X8U" firstAttribute="top" secondItem="qbd-1o-cNE" secondAttribute="top" constant="7" id="fBp-mk-beD"/>
                     </constraints>

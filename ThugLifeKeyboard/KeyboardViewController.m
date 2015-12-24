@@ -67,6 +67,7 @@
 	
 	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
 	[_allLyricsView setDelegate:self];
+	_allLyricsView.currentCategory = nil;
 }
 
 - (void)setupCategoryPicker {
@@ -103,12 +104,13 @@
 - (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName {
 
 	_currentCategory = categoryName == nil ? @"No Category Selected" : categoryName;
+	_allLyricsView.currentCategory = _currentCategory;
 	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
 	
-	[_lyricsTableView reloadData];
+	[_allLyricsView loadTableView];
 	_isCategoryPickerVisible = false;
 	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
 }
@@ -120,7 +122,7 @@
 
 #pragma mark AllLyricsViewDelegate Methods
 
-- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(int)index {
+- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index {
 	
 	[[self textDocumentProxy] insertText:item];
 }

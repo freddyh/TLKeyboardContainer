@@ -17,7 +17,9 @@
 
 @interface AllLyricsView : NSObject
 
--(id)initWithSourceView:(UIView *)sourceView;
 @property (weak) id <AllLyricsViewDelegate>delegate;
+@property NSString *currentCategory;
+-(id)initWithSourceView:(UIView *)sourceView;
+-(void)loadTableView;
 
 @end

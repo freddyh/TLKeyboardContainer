@@ -15,7 +15,6 @@
 @property (weak) UIView *originView;
 @property UIView *containerView;
 @property UITableView *thugLifeLyricsTableView;
-@property NSString *currentCategory;
 @property NSArray *lyricData;
 
 @end
@@ -96,6 +95,12 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	//increase useCount
 	//If useCount is greater than zero, then add to recently used category? not here? in LyricsManager?
+}
+
+-(void)loadTableView {
+	
+	_lyricData = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
+	[_thugLifeLyricsTableView reloadData];
 }
 
 @end
