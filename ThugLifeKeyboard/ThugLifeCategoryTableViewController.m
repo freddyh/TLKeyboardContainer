@@ -7,7 +7,6 @@
 //
 
 #import "ThugLifeCategoryTableViewController.h"
-#import "LyricsManager.h"
 
 @interface ThugLifeCategoryTableViewController ()
 

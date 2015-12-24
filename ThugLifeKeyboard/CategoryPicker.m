@@ -10,14 +10,14 @@
 #import "ThugLifeCategoryTableViewController.h"
 #import "LyricsManager.h"
 
-@interface CategoryPicker() <ThugLifeCategoryTableViewControllerDelegate>
+@interface CategoryPicker() <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak) UIView *originView;
-@property UIView *containerView;
-@property ThugLifeCategoryTableViewController *thugLifeCategoryTableViewController;
+@property (strong, nonatomic) UITableView *categoryTableView;
+@property (strong, nonatomic) NSArray *tableData;
+@property NSUInteger selectedIndex;
 
 @end
-
 
 @implementation CategoryPicker
 
@@ -25,9 +25,10 @@
 	self = [super init];
 	
 	_originView = sourceView;
+	_tableData = menuItems;
 	[self setupTableView];
 	
-	_thugLifeCategoryTableViewController.tableData = menuItems;
+	
 	
 	return self;
 }
@@ -35,26 +36,18 @@
 - (void)setupTableView {
 	
 	/***
-	 Add _containerView to view hierarchy
-	 Reduce the height to save space for the toolbar of the keyboard
-	 ***/
-	_containerView = [[UIView alloc] initWithFrame:CGRectMake(0, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
-	[_originView addSubview:_containerView];
-	
-	
-	/***
-	 Create a TableViewController that fills the _containerView, has no cell separators, and custom blue background color
+	 Create a TableViewController that fills the _originView, has no cell separators, and custom blue background color
 	 Data Source comes from LyricsManager
 	 Default selectedCategoryName is nil
 	 ***/
-	_thugLifeCategoryTableViewController = [ThugLifeCategoryTableViewController new];
-	_thugLifeCategoryTableViewController.selectedCategoryName = nil;
-	[_thugLifeCategoryTableViewController setDelegate:self];
-	[_thugLifeCategoryTableViewController.tableView setFrame:_containerView.bounds];
-	[_thugLifeCategoryTableViewController.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-	[_thugLifeCategoryTableViewController.tableView setScrollsToTop:false];
-	[_thugLifeCategoryTableViewController.tableView setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
-	[_containerView addSubview:_thugLifeCategoryTableViewController.tableView];
+	_selectedCategoryName = nil;
+	_categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height, _originView.bounds.size.width, _originView.bounds.size.height - 40.0) style:UITableViewStylePlain];
+	[_categoryTableView setDataSource:self];
+	[_categoryTableView setDelegate:self];
+	[_categoryTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+	[_categoryTableView setScrollsToTop:false];
+	[_categoryTableView setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
+	[_originView addSubview:_categoryTableView];
 }
 
 - (void)showCategoryPicker:(BOOL)shouldOpen {
@@ -65,23 +58,82 @@
 	 ***/
 	if (shouldOpen) {
 		[_delegate categoryPickerWillOpen];
+		[_categoryTableView reloadData];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
+			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	} else {
 		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_containerView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
+			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
 		}];
 	}
 }
 
-- (void) thugLifeCategoryTableViewControllerDidSelectItem:(NSString *)categoryName {
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	
-	[_delegate categoryPickerDidSelectItemAtIndex:categoryName];
-	[[_thugLifeCategoryTableViewController tableView] reloadData];
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	
+	return [_tableData count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	/***
+	 Create a reusable cell if it does not exist
+	 ***/
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CategoryCell"];
+	}
+	[[cell textLabel] setText:[_tableData objectAtIndex:[indexPath row]]];
+	
+	
+	/***
+	 If there is a _selectedCategoryName and this is the correct row, then give the cell a checkmark.
+	 Otherwise, remove any checkmarks from the cell
+	 ***/
+	if (_selectedCategoryName != nil && _selectedIndex == [indexPath row]) {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	}
+	
+	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:false];
+	
+	[self configureSelectedIndex:[indexPath row]];
+	
+	/***
+	 Toggle the checkmark
+	 ***/
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	cell.accessoryType = (cell.accessoryType != UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	[_delegate categoryPickerDidSelectItemAtIndex:_selectedCategoryName];
+}
+
+- (void)configureSelectedIndex:(NSUInteger)index {
+	
+	/***
+	 Check if the row matches the _selectedIndex
+	 ***/
+	if (_selectedIndex == index) {
+		_selectedCategoryName = nil;
+	} else {
+		_selectedIndex = index;
+		_selectedCategoryName = [_tableData objectAtIndex: _selectedIndex];
+	}
 }
 
 @end

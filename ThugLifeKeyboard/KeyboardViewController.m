@@ -39,7 +39,6 @@
 	
 	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
 	[_allLyricsView setDelegate:self];
-	_allLyricsView.currentCategory = nil;
 }
 
 #pragma mark UITextInputDelegate Methods

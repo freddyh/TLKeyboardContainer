@@ -20,6 +20,7 @@
 
 @property (weak) id <AllLyricsViewDelegate>delegate;
 @property NSString *currentCategory;
+
 -(id)initWithSourceView:(UIView *)sourceView;
 -(void)loadTableView;
 
