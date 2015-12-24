@@ -117,8 +117,9 @@
     if ([result count]) {
         return result;
     } else {
+		
         NSLog(@"No results for category: %@", name);
-        return _lyricsArray;
+        return @[];
     }
 }
 
