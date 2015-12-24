@@ -137,8 +137,11 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	 Send the lyric to the KeyboardViewController 
 	 (Consider not sending the index with the lyric)
 	 ***/
+	
 	NSUInteger index = [indexPath row];
-	NSString *lyric = [[_lyricData objectAtIndex:index] lyric];
+	ThugLifeLyrics *songLyric = [_lyricData objectAtIndex:index];
+	songLyric.usedCount += 1;
+	NSString *lyric = [songLyric lyric];
 	[_delegate lyricsViewDidSelectItem:lyric AtIndex:index];
 	
 	//increase useCount

@@ -21,7 +21,6 @@
 		468587E61C29EF1800741F78 /* step5.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587DF1C29EF1800741F78 /* step5.png */; };
 		468587E71C29EF1800741F78 /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587E01C29EF1800741F78 /* step2.png */; };
 		468587E81C29EF1800741F78 /* step6.png in Resources */ = {isa = PBXBuildFile; fileRef = 468587E11C29EF1800741F78 /* step6.png */; };
-		468587EB1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */; };
 		468587EE1C29F27A00741F78 /* CategoryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 468587ED1C29F27A00741F78 /* CategoryPicker.m */; };
 		46E04C881C28EC1300E5E64B /* ThugLifeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */; };
 		46E04C8B1C28EC1D00E5E64B /* LyricsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */; };
@@ -88,8 +87,6 @@
 		468587DF1C29EF1800741F78 /* step5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step5.png; sourceTree = "<group>"; };
 		468587E01C29EF1800741F78 /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step2.png; sourceTree = "<group>"; };
 		468587E11C29EF1800741F78 /* step6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step6.png; sourceTree = "<group>"; };
-		468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeCategoryTableViewController.h; sourceTree = "<group>"; };
-		468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThugLifeCategoryTableViewController.m; sourceTree = "<group>"; };
 		468587EC1C29F27A00741F78 /* CategoryPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPicker.h; sourceTree = "<group>"; };
 		468587ED1C29F27A00741F78 /* CategoryPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPicker.m; sourceTree = "<group>"; };
 		46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThugLifeLyrics.h; sourceTree = "<group>"; };
@@ -230,8 +227,6 @@
 				46E04C891C28EC1D00E5E64B /* LyricsManager.h */,
 				46E04C8A1C28EC1D00E5E64B /* LyricsManager.m */,
 				5DCC58951B42EB95006281B7 /* Supporting Files */,
-				468587E91C29F01D00741F78 /* ThugLifeCategoryTableViewController.h */,
-				468587EA1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m */,
 				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
 				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
 			);
@@ -423,7 +418,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DCC58991B42EB95006281B7 /* KeyboardViewController.m in Sources */,
-				468587EB1C29F01D00741F78 /* ThugLifeCategoryTableViewController.m in Sources */,
 				46E04C881C28EC1300E5E64B /* ThugLifeLyrics.m in Sources */,
 				46E04C8B1C28EC1D00E5E64B /* LyricsManager.m in Sources */,
 				460580811C2A55B3005F781E /* AllLyricsView.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "CategoryPicker.h"
-#import "ThugLifeCategoryTableViewController.h"
 #import "LyricsManager.h"
 
 @interface CategoryPicker() <UITableViewDataSource, UITableViewDelegate>
@@ -27,8 +26,6 @@
 	_originView = sourceView;
 	_tableData = menuItems;
 	[self setupTableView];
-	
-	
 	
 	return self;
 }
