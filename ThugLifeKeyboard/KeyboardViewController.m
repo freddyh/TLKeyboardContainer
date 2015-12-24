@@ -39,11 +39,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+	
+    /***
+	 Load the Nib
+	 ***/
     UINib *nib = [UINib nibWithNibName:@"ThugLifeKeyboardView" bundle:nil];
     NSArray *arr = [nib instantiateWithOwner:self options:nil];
     self.view = arr[0];
 	
+	/***
+	 Create object for displaying all lyrics and an object for displaying categories
+	 ***/
 	[self setupTableView];
 	[self setupCategoryPicker];
 }
@@ -61,17 +67,20 @@
 	
 	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
 	[_allLyricsView setDelegate:self];
-	
 }
 
 - (void)setupCategoryPicker {
 	
+	/***
+	 Create a CategoryPicker with all categories from LyricsManager
+	 ***/
 	_categoryData = [[LyricsManager sharedManager] allCategories];
-	CategoryPicker *bottomBarCategoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:_categoryData];
-	[bottomBarCategoryPicker setDelegate:self];
-	_categoryPicker = bottomBarCategoryPicker;
+	_categoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:_categoryData];
+	[_categoryPicker setDelegate:self];
 	_isCategoryPickerVisible = NO;
 }
+
+#pragma mark UITextInputDelegate Methods
 
 - (void)textWillChange:(id<UITextInput>)textInput {
     // The app is about to change the document's contents. Perform any preparation here.

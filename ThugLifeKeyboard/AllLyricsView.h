@@ -11,7 +11,7 @@
 
 @protocol AllLyricsViewDelegate <NSObject>
 
-- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(int)index;
+- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index;
 
 @end
 

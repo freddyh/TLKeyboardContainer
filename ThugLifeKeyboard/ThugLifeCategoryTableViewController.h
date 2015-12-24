@@ -16,7 +16,8 @@
 
 @interface ThugLifeCategoryTableViewController : UITableViewController
 
-@property NSString *selectedCategoryName;
+@property (weak)NSArray *tableData;
+@property (weak, nonatomic)NSString *selectedCategoryName;
 @property (weak) id <ThugLifeCategoryTableViewControllerDelegate>delegate;
 
 @end

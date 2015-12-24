@@ -33,10 +33,10 @@
                                 <action selector="nextKeyboard:" destination="-1" eventType="touchUpInside" id="v73-M1-hgD"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX4-Qp-SMt" userLabel="Category Picker Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX4-Qp-SMt" userLabel="Category Picker Button">
                             <rect key="frame" x="46" y="0.0" width="266" height="44"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                            <state key="normal" title="Select a category">
+                            <state key="normal" title="Select A Category Here">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>

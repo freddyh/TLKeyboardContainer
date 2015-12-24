@@ -12,7 +12,6 @@
 @interface ThugLifeCategoryTableViewController ()
 
 @property NSUInteger selectedIndex;
-@property NSArray *tableData;
 
 @end
 
@@ -20,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	_tableData = [[LyricsManager sharedManager] allCategories];
+
+	/***
+	 If there is a _selectedCategoryName, then set the index.
+	 ***/
 	if (_selectedCategoryName != nil) {
 		_selectedIndex = [_tableData indexOfObject:_selectedCategoryName];
 	}
@@ -40,14 +42,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+	/***
+	 Create a reusable cell if it does not exist
+	 ***/
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CategoryCell"];
 	}
+	[[cell textLabel] setText:[_tableData objectAtIndex:[indexPath row]]];
 	
-	cell.textLabel.text = [_tableData objectAtIndex:[indexPath row]];
 	
-	
+	/***
+	 If there is a _selectedCategoryName and this is the correct row, then give the cell a checkmark.
+	 Otherwise, remove any checkmarks from the reusable cell
+	 ***/
 	if (_selectedCategoryName != nil && _selectedIndex == [indexPath row]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	} else {
@@ -60,19 +68,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+	[tableView deselectRowAtIndexPath:indexPath animated:false];
+	
+	[self configureSelectedIndex:[indexPath row]];
+	
+	/***
+	 Toggle the checkmark
+	 ***/
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	
-	if (_selectedIndex == [indexPath row]) {
-		_selectedCategoryName = nil;
-	} else {
-		_selectedIndex = [indexPath row];
-		_selectedCategoryName = [_tableData objectAtIndex: _selectedIndex];
-	}
-	
 	cell.accessoryType = (cell.accessoryType != UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	
-	[tableView deselectRowAtIndexPath:indexPath animated:false];
+	/***
+	 Pass the category name to the CategoryPicker
+	 ***/
 	[_delegate thugLifeCategoryTableViewControllerDidSelectItem:_selectedCategoryName];
+}
+
+- (void)configureSelectedIndex:(NSUInteger)index {
+	
+	/***
+	 Check if the row matches the _selectedIndex
+	 ***/
+	if (_selectedIndex == index) {
+		_selectedCategoryName = nil;
+	} else {
+		_selectedIndex = index;
+		_selectedCategoryName = [_tableData objectAtIndex: _selectedIndex];
+	}
 }
 
 @end
