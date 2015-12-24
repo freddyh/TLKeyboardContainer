@@ -7,22 +7,11 @@
 //
 
 #import "KeyboardViewController.h"
-#import "CategoryPicker.h"
 #import "AllLyricsView.h"
 
-@interface KeyboardViewController ()<CategoryPickerDelegate, AllLyricsViewDelegate>
+@interface KeyboardViewController ()<AllLyricsViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UIButton *nextKeyboardButton;
-@property (strong, nonatomic) IBOutlet UIButton *categoryPickerButton;
-@property (strong, nonatomic) IBOutlet UIView *toolbarView;
-
-@property (strong, nonatomic) UITableView *lyricsTableView;
-@property (strong, nonatomic) CategoryPicker *categoryPicker;
-@property (strong, nonatomic) NSArray *categoryData;
 @property (strong, nonatomic) AllLyricsView *allLyricsView;
-@property (strong, nonatomic) NSString *currentCategory;
-
-@property (nonatomic) BOOL isCategoryPickerVisible;
 
 @end
 
@@ -32,53 +21,24 @@
     [super updateViewConstraints];
 }
 
-- (IBAction)nextKeyboard:(id)sender {
-    
-    [self advanceToNextInputMode];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-    /***
-	 Load the Nib
-	 ***/
-    UINib *nib = [UINib nibWithNibName:@"ThugLifeKeyboardView" bundle:nil];
-    NSArray *arr = [nib instantiateWithOwner:self options:nil];
-    self.view = arr[0];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	
 	/***
-	 Create object for displaying all lyrics and an object for displaying categories
+	 Create object for displaying all lyrics
 	 ***/
-	[self setupTableView];
-	[self setupCategoryPicker];
+	[self setupAllLyricsView];
+
 }
 
-- (IBAction)categoryPickerButtonTapped:(id)sender {
-	
-    if (!_isCategoryPickerVisible) {
-		[_categoryPicker showCategoryPicker:true];
-    } else {
-		[_categoryPicker showCategoryPicker:false];
-    }
-}
-
-- (void)setupTableView {
+- (void)setupAllLyricsView {
 	
 	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
 	[_allLyricsView setDelegate:self];
-	_allLyricsView.currentCategory = nil;
-}
-
-- (void)setupCategoryPicker {
-	
-	/***
-	 Create a CategoryPicker with all categories from LyricsManager
-	 ***/
-	_categoryData = [[LyricsManager sharedManager] allCategories];
-	_categoryPicker = [[CategoryPicker alloc] initWithSourceView:[self view] andData:_categoryData];
-	[_categoryPicker setDelegate:self];
-	_isCategoryPickerVisible = NO;
 }
 
 #pragma mark UITextInputDelegate Methods
@@ -96,28 +56,7 @@
     } else {
         textColor = [UIColor blackColor];
     }
-    [self.nextKeyboardButton setTitleColor:textColor forState:UIControlStateNormal];
-}
-
-#pragma mark CategoryPickerDelegate Methods
-
-- (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName {
-
-	_currentCategory = categoryName == nil ? @"No Category Selected" : categoryName;
-	_allLyricsView.currentCategory = _currentCategory;
-	[_categoryPicker showCategoryPicker:false];
-}
-
-- (void)categoryPickerWillClose {
-	
-	[_allLyricsView loadTableView];
-	_isCategoryPickerVisible = false;
-	[_categoryPickerButton setTitle:_currentCategory forState:UIControlStateNormal];
-}
-
-- (void)categoryPickerWillOpen {
-	
-	_isCategoryPickerVisible = true;
+//    [self.nextKeyboardButton setTitleColor:textColor forState:UIControlStateNormal];
 }
 
 #pragma mark AllLyricsViewDelegate Methods
@@ -125,6 +64,10 @@
 - (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index {
 	
 	[[self textDocumentProxy] insertText:item];
+}
+
+- (void)lyricsViewShouldShowNextKeyboard {
+	[self advanceToNextInputMode];
 }
 
 @end

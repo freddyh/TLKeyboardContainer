@@ -68,11 +68,10 @@
         newLyric.lyric = removedQuotesString;
         
         
-        newLyric.lyricType = lyricDetails[1];
+        newLyric.lyricCategory = lyricDetails[1];
         newLyric.songTitle = lyricDetails[2];
         newLyric.albumTitle = lyricDetails[3];
         
-        newLyric.savedTrack = NO;
         newLyric.usedCount = 0;
 
         [_lyricsArray addObject:newLyric];
@@ -95,12 +94,25 @@
     }
     
     NSMutableArray *result = [NSMutableArray new];
-    for (ThugLifeLyrics *song in _lyricsArray) {
-        NSString *currentType = song.lyricType;
-        if ([currentType isEqualToString:name]) {
-            [result addObject:song];
-        }
-    }
+	
+	if ([name  isEqual: @"Recently Used"]) {
+
+		for (ThugLifeLyrics *song in _lyricsArray) {
+			if (song.usedCount > 0) {
+				[result addObject:song];
+			}
+		}
+	} else {
+		
+		for (ThugLifeLyrics *song in _lyricsArray) {
+			NSString *currentType = song.lyricCategory;
+			if ([currentType isEqualToString:name]) {
+				[result addObject:song];
+			}
+		}
+	}
+	
+    
     
     if ([result count]) {
         return result;
