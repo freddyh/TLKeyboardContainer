@@ -11,6 +11,9 @@
 #import "ThugLifeLyrics.h"
 #import "CategoryPicker.h"
 
+static const CGFloat buttonHeight = 40.0;
+static const CGFloat globeHeight = 30.0;
+
 @interface AllLyricsView() <UITableViewDataSource, UITableViewDelegate, CategoryPickerDelegate>
 
 @property (weak) UIView *originView;
@@ -34,7 +37,7 @@
 	/***
 	 Create _containerView and add it to view hierarchy
 	 ***/
-	_containerView = [[UIView alloc] initWithFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height)];
+	_containerView = [[UIView alloc] initWithFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - buttonHeight)];
 	[_originView addSubview:_containerView];
 	
 	[self setupLyricsTableView];
@@ -67,19 +70,19 @@
 }
 
 -(void)setupCategoryPickerButton {
-	_pickCategoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _containerView.bounds.size.height - 40.0, _containerView.bounds.size.width, 40)];
+	_pickCategoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height - buttonHeight, _originView.bounds.size.width, buttonHeight)];
 	[_pickCategoryButton addTarget:self action:@selector(pickCategoryButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 	[_pickCategoryButton setTitle:@"Select A Category" forState:UIControlStateNormal];
 	[_pickCategoryButton setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
-	[_containerView addSubview:_pickCategoryButton];
+	[_originView addSubview:_pickCategoryButton];
 }
 
 -(void)setupNextKeyboardButton {
 	
-	_nextKeyboardButton = [[UIButton alloc] initWithFrame:CGRectMake(8, _containerView.bounds.size.height - 35.0, 30.0, 30.0)];
+	_nextKeyboardButton = [[UIButton alloc] initWithFrame:CGRectMake(8, _originView.bounds.size.height - (globeHeight + 5.0), globeHeight, globeHeight)];
 	[_nextKeyboardButton addTarget:self action:@selector(nextKeyboardButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 	[_nextKeyboardButton setImage:[UIImage imageNamed:@"globe-button.png"] forState:UIControlStateNormal];
-	[_containerView addSubview:_nextKeyboardButton];
+	[_originView addSubview:_nextKeyboardButton];
 }
 
 -(void)pickCategoryButtonTapped {

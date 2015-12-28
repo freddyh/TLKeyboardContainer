@@ -38,7 +38,7 @@
 	 Default selectedCategoryName is nil
 	 ***/
 	_selectedCategoryName = nil;
-	_categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height, _originView.bounds.size.width, _originView.bounds.size.height - 40.0) style:UITableViewStylePlain];
+	_categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height, _originView.bounds.size.width, _originView.bounds.size.height) style:UITableViewStylePlain];
 	[_categoryTableView setDataSource:self];
 	[_categoryTableView setDelegate:self];
 	[_categoryTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -58,13 +58,13 @@
 		[_categoryTableView reloadData];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
+			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height)];
 		}];
 	} else {
 		[_delegate categoryPickerWillClose];
 		[UIView animateWithDuration:0.2 animations:^{
 			
-			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height - 40.0)];
+			[_categoryTableView setFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.size.height, _originView.frame.size.width, _originView.frame.size.height)];
 		}];
 	}
 }

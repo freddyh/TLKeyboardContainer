@@ -114,7 +114,7 @@
 	
     
     
-    if ([result count]) {
+    if ([result count] > 0) {
         return result;
     } else {
 		

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 
 @interface ThugLifeLyrics : NSObject
 
@@ -15,10 +15,7 @@
 @property (nonatomic, strong) NSString *songTitle;
 @property (nonatomic, strong) NSString *albumTitle;
 @property (nonatomic, strong) NSString *thugLifeTrackId;
-
 @property (nonatomic, strong) NSString *lyricCategory;
-@property (nonatomic, strong) UIImage *thumbnail;
-
 @property (nonatomic) NSUInteger usedCount;
 
 @end
