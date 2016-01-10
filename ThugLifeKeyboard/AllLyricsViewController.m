@@ -25,6 +25,14 @@
 
 @implementation AllLyricsViewController
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	_isCategoryPickerVisible = false;
+	_categoryPicker = [[CategoryPicker alloc] initWithSourceView:self.view andData:[[LyricsManager sharedManager] allCategories]];
+	[_categoryPicker setDelegate:self];
+	_lyricData = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
+	
+}
 - (IBAction)showNextKeyboard:(UIButton *)sender {
 	
 	[_delegate lyricsViewShouldShowNextKeyboard];

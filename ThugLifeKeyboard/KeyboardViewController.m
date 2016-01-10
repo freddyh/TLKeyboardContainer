@@ -23,13 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	_allLyricsViewController = [AllLyricsViewController new];
-	[_allLyricsViewController setDelegate:self];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	[self.navigationController presentViewController:_allLyricsViewController animated:false completion:nil];
+	_allLyricsViewController = [AllLyricsViewController new];
+	[_allLyricsViewController setDelegate:self];
+	[self presentViewController:_allLyricsViewController animated:false completion:nil];
 }
 
 #pragma mark UITextInputDelegate Methods
