@@ -38,6 +38,7 @@
 	 Default selectedCategoryName is nil
 	 ***/
 	_selectedCategoryName = nil;
+	_selectedIndex = -1;
 	_categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height, _originView.bounds.size.width, _originView.bounds.size.height) style:UITableViewStylePlain];
 	[_categoryTableView setDataSource:self];
 	[_categoryTableView setDelegate:self];
@@ -97,7 +98,7 @@
 	 If there is a _selectedCategoryName and this is the correct row, then give the cell a checkmark.
 	 Otherwise, remove any checkmarks from the cell
 	 ***/
-	if (_selectedCategoryName != nil && _selectedIndex == [indexPath row]) {
+	if (_selectedIndex == [indexPath row]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	} else {
 		cell.accessoryType = UITableViewCellAccessoryNone;
@@ -117,7 +118,7 @@
 	 ***/
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	cell.accessoryType = (cell.accessoryType != UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-	[_delegate categoryPickerDidSelectItemAtIndex:_selectedCategoryName];
+	[_delegate categoryPickerDidSelectCategoryWithName:_selectedCategoryName];
 }
 
 - (void)configureSelectedIndex:(NSUInteger)index {
@@ -127,6 +128,7 @@
 	 ***/
 	if (_selectedIndex == index) {
 		_selectedCategoryName = nil;
+		_selectedIndex = -1;
 	} else {
 		_selectedIndex = index;
 		_selectedCategoryName = [_tableData objectAtIndex: _selectedIndex];

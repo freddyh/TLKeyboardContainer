@@ -89,7 +89,7 @@
 - (NSArray *)fetchForCategory:(NSString *)name
 {
 	//If no category name is provided then return all lyrics
-    if (!name) {
+    if (name == nil) {
         return _lyricsArray;
     }
     
@@ -112,15 +112,7 @@
 		}
 	}
 	
-    
-    
-    if ([result count] > 0) {
-        return result;
-    } else {
-		
-        NSLog(@"No results for category: %@", name);
-        return @[];
-    }
+	return result;
 }
 
 - (NSArray *)allCategories

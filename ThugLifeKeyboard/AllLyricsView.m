@@ -11,8 +11,7 @@
 #import "ThugLifeLyrics.h"
 #import "CategoryPicker.h"
 
-static const CGFloat buttonHeight = 40.0;
-static const CGFloat globeHeight = 30.0;
+static const CGFloat buttonSize = 40.0;
 
 @interface AllLyricsView() <UITableViewDataSource, UITableViewDelegate, CategoryPickerDelegate>
 
@@ -37,7 +36,7 @@ static const CGFloat globeHeight = 30.0;
 	/***
 	 Create _containerView and add it to view hierarchy
 	 ***/
-	_containerView = [[UIView alloc] initWithFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - buttonHeight)];
+	_containerView = [[UIView alloc] initWithFrame:CGRectMake(_originView.frame.origin.x, _originView.frame.origin.y, _originView.frame.size.width, _originView.frame.size.height - buttonSize)];
 	[_originView addSubview:_containerView];
 	
 	[self setupLyricsTableView];
@@ -65,12 +64,13 @@ static const CGFloat globeHeight = 30.0;
 -(void)setupCategoryPicker {
 	
 	_categoryPicker = [[CategoryPicker alloc] initWithSourceView:_containerView andData:[[LyricsManager sharedManager] allCategories]];
+	_categoryPicker.selectedCategoryName = _currentCategory;
 	[_categoryPicker setDelegate:self];
 	_isCategoryPickerVisible = NO;
 }
 
 -(void)setupCategoryPickerButton {
-	_pickCategoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height - buttonHeight, _originView.bounds.size.width, buttonHeight)];
+	_pickCategoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height - buttonSize, _originView.bounds.size.width, buttonSize)];
 	[_pickCategoryButton addTarget:self action:@selector(pickCategoryButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 	[_pickCategoryButton setTitle:@"Select A Category" forState:UIControlStateNormal];
 	[_pickCategoryButton setBackgroundColor:[UIColor colorWithRed:47.0/255.0 green:102.0/255.0 blue:174.0/255.0 alpha:1.0]];
@@ -79,7 +79,7 @@ static const CGFloat globeHeight = 30.0;
 
 -(void)setupNextKeyboardButton {
 	
-	_nextKeyboardButton = [[UIButton alloc] initWithFrame:CGRectMake(8, _originView.bounds.size.height - (globeHeight + 5.0), globeHeight, globeHeight)];
+	_nextKeyboardButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _originView.bounds.size.height - buttonSize, buttonSize, buttonSize)];
 	[_nextKeyboardButton addTarget:self action:@selector(nextKeyboardButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 	[_nextKeyboardButton setImage:[UIImage imageNamed:@"globe-button.png"] forState:UIControlStateNormal];
 	[_originView addSubview:_nextKeyboardButton];
@@ -138,7 +138,7 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	/***
 	 Send the lyric to the KeyboardViewController 
-	 (Consider not sending the index with the lyric)
+	 (Considering not sending the index with the lyric)
 	 ***/
 	
 	NSUInteger index = [indexPath row];
@@ -147,8 +147,6 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSString *lyric = [songLyric lyric];
 	[_delegate lyricsViewDidSelectItem:lyric AtIndex:index];
 	
-	//increase useCount
-	//If useCount is greater than zero, then add to recently used category? not here? in LyricsManager?
 }
 
 -(void)loadTableView {
@@ -159,21 +157,20 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark CategoryPickerDelegate Methods
 
-- (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName {
+- (void)categoryPickerDidSelectCategoryWithName:(NSString *)categoryName {
 	
-	_currentCategory = categoryName == nil ? @"No Category Selected" : categoryName;
+	_currentCategory = categoryName;
+	[self loadTableView];
 	[_categoryPicker showCategoryPicker:false];
 }
 
 - (void)categoryPickerWillClose {
-	
-	[self loadTableView];
 	_isCategoryPickerVisible = false;
-	[_pickCategoryButton setTitle:_currentCategory forState:UIControlStateNormal];
+	NSString *currentTitle = _currentCategory == nil ? @"All Categories" : _currentCategory;
+	[_pickCategoryButton setTitle:currentTitle forState:UIControlStateNormal];
 }
 
 - (void)categoryPickerWillOpen {
-	
 	_isCategoryPickerVisible = true;
 }
 

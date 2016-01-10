@@ -11,7 +11,7 @@
 
 @protocol CategoryPickerDelegate <NSObject>
 
-- (void)categoryPickerDidSelectItemAtIndex:(NSString *)categoryName;
+- (void)categoryPickerDidSelectCategoryWithName:(NSString *)categoryName;
 
 @optional
 - (void)categoryPickerWillClose;
@@ -22,7 +22,7 @@
 @interface CategoryPicker : NSObject
 
 @property (weak) id <CategoryPickerDelegate> delegate;
-@property (weak, nonatomic)NSString *selectedCategoryName;
+@property (strong, nonatomic)NSString *selectedCategoryName;
 
 -(id)initWithSourceView:(UIView *)sourceView andData:(NSArray *)menuItems;
 
