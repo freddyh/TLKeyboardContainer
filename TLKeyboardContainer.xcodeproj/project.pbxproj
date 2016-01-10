@@ -220,6 +220,9 @@
 		5DCC58941B42EB95006281B7 /* ThugLifeKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				469BF53F1C42FA8D006BED97 /* AllLyricsViewController.h */,
+				469BF5401C42FA8D006BED97 /* AllLyricsViewController.m */,
+				469BF5411C42FA8D006BED97 /* AllLyricsViewController.xib */,
 				468587EC1C29F27A00741F78 /* CategoryPicker.h */,
 				468587ED1C29F27A00741F78 /* CategoryPicker.m */,
 				5DCC58971B42EB95006281B7 /* KeyboardViewController.h */,
@@ -229,9 +232,6 @@
 				5DCC58951B42EB95006281B7 /* Supporting Files */,
 				46E04C861C28EC1300E5E64B /* ThugLifeLyrics.h */,
 				46E04C871C28EC1300E5E64B /* ThugLifeLyrics.m */,
-				469BF53F1C42FA8D006BED97 /* AllLyricsViewController.h */,
-				469BF5401C42FA8D006BED97 /* AllLyricsViewController.m */,
-				469BF5411C42FA8D006BED97 /* AllLyricsViewController.xib */,
 			);
 			path = ThugLifeKeyboard;
 			sourceTree = "<group>";

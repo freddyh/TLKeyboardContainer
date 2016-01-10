@@ -35,7 +35,7 @@
 }
 - (IBAction)showNextKeyboard:(UIButton *)sender {
 	
-	[_delegate lyricsViewShouldShowNextKeyboard];
+	[_delegate shouldShowNextKeyboard];
 }
 
 - (IBAction)categoryPickerButtonTapped:(UIButton *)sender {
@@ -48,7 +48,7 @@
 }
 
 - (IBAction)backspaceButtonTapped:(UIButton *)sender {
-	
+	[_delegate shouldDeleteBackwards];
 }
 
 #pragma mark UITableViewDataSource Methods

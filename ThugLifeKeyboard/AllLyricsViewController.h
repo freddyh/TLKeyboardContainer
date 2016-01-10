@@ -11,7 +11,8 @@
 @protocol AllLyricsViewDelegate <NSObject>
 
 - (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index;
-- (void)lyricsViewShouldShowNextKeyboard;
+- (void)shouldShowNextKeyboard;
+- (void)shouldDeleteBackwards;
 
 @end
 

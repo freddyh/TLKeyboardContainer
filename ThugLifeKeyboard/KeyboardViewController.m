@@ -58,8 +58,12 @@
 	[[self textDocumentProxy] insertText:item];
 }
 
-- (void)lyricsViewShouldShowNextKeyboard {
+- (void)shouldShowNextKeyboard {
 	[self advanceToNextInputMode];
+}
+
+- (void)shouldDeleteBackwards {
+	[self.textDocumentProxy deleteBackward];
 }
 
 @end
