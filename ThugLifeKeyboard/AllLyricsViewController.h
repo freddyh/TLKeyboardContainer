@@ -1,12 +1,11 @@
 //
-//  AllLyricsView.h
+//  AllLyricsViewController.h
 //  TLKeyboardContainer
 //
-//  Created by Freddy Hernandez on 12/22/15.
-//  Copyright © 2015 FredHedz. All rights reserved.
+//  Created by Freddy Hernandez on 1/10/16.
+//  Copyright © 2016 FredHedz. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @protocol AllLyricsViewDelegate <NSObject>
@@ -16,12 +15,9 @@
 
 @end
 
-@interface AllLyricsView : NSObject
+@interface AllLyricsViewController : UIViewController
 
 @property (weak) id <AllLyricsViewDelegate>delegate;
 @property NSString *currentCategory;
-
--(id)initWithSourceView:(UIView *)sourceView;
--(void)loadTableView;
 
 @end

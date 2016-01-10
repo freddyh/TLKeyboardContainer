@@ -7,11 +7,11 @@
 //
 
 #import "KeyboardViewController.h"
-#import "AllLyricsView.h"
+#import "AllLyricsViewController.h"
 
 @interface KeyboardViewController ()<AllLyricsViewDelegate>
 
-@property (strong, nonatomic) AllLyricsView *allLyricsView;
+@property (strong, nonatomic) AllLyricsViewController *allLyricsViewController;
 
 @end
 
@@ -23,22 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	_allLyricsViewController = [AllLyricsViewController new];
+	[_allLyricsViewController setDelegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	/***
-	 Create object for displaying all lyrics
-	 ***/
-	[self setupAllLyricsView];
-
-}
-
-- (void)setupAllLyricsView {
-	
-	_allLyricsView = [[AllLyricsView alloc] initWithSourceView: [self view]];
-	[_allLyricsView setDelegate:self];
+	[self.navigationController presentViewController:_allLyricsViewController animated:false completion:nil];
 }
 
 #pragma mark UITextInputDelegate Methods
