@@ -7,17 +7,16 @@
 //
 
 #import "AllLyricsViewController.h"
+#import "CategoryPickerViewController.h"
 #import "LyricsManager.h"
 #import "ThugLifeLyrics.h"
-#import "CategoryPicker.h"
-
 
 @interface AllLyricsViewController ()<UITableViewDataSource, UITableViewDelegate, CategoryPickerDelegate>
 
 @property NSArray *lyricData;
 
 @property (weak, nonatomic) IBOutlet UITableView *allLyricsTableView;
-@property (strong, nonatomic) CategoryPicker *categoryPicker;
+@property (strong, nonatomic) CategoryPickerViewController *categoryPicker;
 @property (nonatomic) BOOL isCategoryPickerVisible;
 @property (weak, nonatomic) IBOutlet UIButton *categoryPickerButton;
 
@@ -27,9 +26,14 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	_allLyricsTableView.allowsMultipleSelection = true;
 	_isCategoryPickerVisible = false;
-	_categoryPicker = [[CategoryPicker alloc] initWithSourceView:self.view andData:[[LyricsManager sharedManager] allCategories]];
+	
+	_categoryPicker = [CategoryPickerViewController new];
 	[_categoryPicker setDelegate:self];
+	_categoryPicker.categoryData = [[LyricsManager sharedManager] allCategories];
+	
 	_lyricData = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
 	
 }
@@ -41,9 +45,11 @@
 - (IBAction)categoryPickerButtonTapped:(UIButton *)sender {
 	
 	if (!_isCategoryPickerVisible) {
-		[_categoryPicker showCategoryPicker:true];
+		[self categoryPickerWillOpen];
+		_categoryPicker.selectedCategoryName = _currentCategory;
+		[self presentViewController:_categoryPicker animated:true completion:nil];
 	} else {
-		[_categoryPicker showCategoryPicker:false];
+		[self dismissViewControllerAnimated:true completion:nil];
 	}
 }
 
@@ -101,6 +107,10 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"%@", indexPath);
+}
+
 -(void)loadTableView {
 	
 	_lyricData = [[LyricsManager sharedManager] fetchForCategory:_currentCategory];
@@ -109,11 +119,17 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark CategoryPickerDelegate Methods
 
-- (void)categoryPickerDidSelectCategoryWithName:(NSString *)categoryName {
+- (void)categoryPickerDidSelectItemAtIndex:(NSInteger)index {
 	
-	_currentCategory = categoryName;
+	if (index == -1) {
+		_currentCategory = nil;
+	} else {
+		_currentCategory = [_categoryPicker.categoryData objectAtIndex:index];
+	}
+	
 	[self loadTableView];
-	[_categoryPicker showCategoryPicker:false];
+	[self categoryPickerWillClose];
+	[self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)categoryPickerWillClose {
@@ -124,6 +140,7 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)categoryPickerWillOpen {
 	_isCategoryPickerVisible = true;
+	_categoryPicker.selectedCategoryName = _currentCategory;
 }
 
 @end

@@ -41,14 +41,6 @@
 
 - (void)textDidChange:(id<UITextInput>)textInput {
     // The app has just changed the document's contents, the document context has been updated.
-    
-    UIColor *textColor = nil;
-    if (self.textDocumentProxy.keyboardAppearance == UIKeyboardAppearanceDark) {
-        textColor = [UIColor whiteColor];
-    } else {
-        textColor = [UIColor blackColor];
-    }
-//    [self.nextKeyboardButton setTitleColor:textColor forState:UIControlStateNormal];
 }
 
 #pragma mark AllLyricsViewDelegate Methods
@@ -63,7 +55,7 @@
 }
 
 - (void)shouldDeleteBackwards {
-	[self.textDocumentProxy deleteBackward];
+	[[self textDocumentProxy] deleteBackward];
 }
 
 @end

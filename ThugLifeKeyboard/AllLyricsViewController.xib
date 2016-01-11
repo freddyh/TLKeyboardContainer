@@ -76,7 +76,7 @@
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eob-Sc-aTc">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="547"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="te5-z8-JRz"/>
@@ -87,7 +87,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Eob-Sc-aTc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="98v-aA-hZN"/>
-                <constraint firstItem="Rwv-oo-xDi" firstAttribute="top" secondItem="Eob-Sc-aTc" secondAttribute="bottom" constant="8" symbolic="YES" id="G64-Wh-XhW"/>
+                <constraint firstItem="Rwv-oo-xDi" firstAttribute="top" secondItem="Eob-Sc-aTc" secondAttribute="bottom" id="G64-Wh-XhW"/>
                 <constraint firstItem="Eob-Sc-aTc" firstAttribute="trailing" secondItem="Rwv-oo-xDi" secondAttribute="trailing" id="JoP-V2-jYE"/>
                 <constraint firstAttribute="bottom" secondItem="Rwv-oo-xDi" secondAttribute="bottom" id="ObF-Xi-tHF"/>
                 <constraint firstItem="Rwv-oo-xDi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aVJ-kz-DxW"/>
