@@ -45,9 +45,8 @@
 
 #pragma mark AllLyricsViewDelegate Methods
 
-- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index {
-	
-	[[self textDocumentProxy] insertText:item];
+- (void)updateTextDocumentWithText:(NSString *)text {
+	[[self textDocumentProxy] insertText:text];
 }
 
 - (void)shouldShowNextKeyboard {

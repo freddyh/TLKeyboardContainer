@@ -10,7 +10,7 @@
 
 @protocol AllLyricsViewDelegate <NSObject>
 
-- (void)lyricsViewDidSelectItem:(NSString *)item AtIndex:(NSUInteger)index;
+- (void)updateTextDocumentWithText:(NSString *)text;
 - (void)shouldShowNextKeyboard;
 - (void)shouldDeleteBackwards;
 

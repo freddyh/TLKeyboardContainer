@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "MainThugLifeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,18 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    MainThugLifeViewController *mainVC = [MainThugLifeViewController new];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    navController.navigationBarHidden = YES;
-    
-    self.window.rootViewController = navController;
-    [self.window makeKeyAndVisible];
     
     return YES;
 }

@@ -103,8 +103,7 @@ estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ThugLifeLyrics *songLyric = [_lyricData objectAtIndex:index];
 	songLyric.usedCount += 1;
 	NSString *lyric = [songLyric lyric];
-	[_delegate lyricsViewDidSelectItem:lyric AtIndex:index];
-	
+	[_delegate updateTextDocumentWithText:lyric];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
